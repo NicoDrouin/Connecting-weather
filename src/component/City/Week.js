@@ -7,5 +7,5 @@ const Week = () => {
         </div>
     )
 }
- 
+
 export default Week

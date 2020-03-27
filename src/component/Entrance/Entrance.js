@@ -1,18 +1,25 @@
 import React from 'react'
 
-const Entrance = () => {
+import CityInput from '../CityInput'
+
+const Entrance = ({currentCity, setCurrentCity, apiData, isLoading, isError, doFetch}) => {
     return (
         <div>
             <header>
                 LogoImg
             </header>
             <main>
-                <label>Votre ville</label>
-                <input type='text'></input>
-                <button>GO GO GO !</button>
+                <CityInput
+                    currentCity = {currentCity}
+                    setCurrentCity = {setCurrentCity}
+                    doFetch = {doFetch}
+                />
+                {apiData && apiData.name}<br/>
+                {isLoading ? 'isLoading' : 'isNotLoading'}<br/>
+                {isError ? 'isError' : 'isNotError'}
             </main>
         </div>
     )
 }
- 
+
 export default Entrance

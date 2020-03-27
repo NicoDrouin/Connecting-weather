@@ -1,24 +1,30 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+
+import CityInput from '../CityInput'
 import Current from './Current'
 import Week from './Week'
 import Day from './Day'
-import useWeatherAPI from '../../services/httpService'
 
 
-const City = () => {
-    const [{ apiData, isLoading, isError }] = useWeatherAPI('London')
-
+const City = ({currentCity, setCurrentCity, apiData, isLoading, isError, doFetch}) => {
 
     return (
         <div>
+            <CityInput
+                currentCity = {currentCity}
+                setCurrentCity = {setCurrentCity}
+                doFetch = {doFetch}
+            />
             City is selected
-            {isError && 'Something went wrong'}
-            {isLoading ? 'loading' : apiData && apiData.name}
-            <Current/>
+            <Current
+                apiData = {apiData}
+                isLoading = {isLoading}
+                isError = {isError}
+            />
             <Week/>
             <Day/>
         </div>
     )
 }
- 
+
 export default City

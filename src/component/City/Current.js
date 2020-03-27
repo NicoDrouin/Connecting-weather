@@ -1,11 +1,23 @@
 import React from 'react'
 
-const Current = () => {
+const Current = ( { apiData, isLoading, isError } ) => {
     return (
         <div>
-            Météo actuelle dans la ville sélectionnée
+            {isError ? 'error' : 'noErr'}
+            {
+                isLoading ?
+                'loading' :
+                apiData &&
+                <div>
+                    <div>{apiData.main.temp}</div>
+                    <div>
+                        {apiData.name}<br/>
+                        {apiData.main.description}
+                    </div>
+                </div>
+            }
         </div>
     )
 }
- 
+
 export default Current

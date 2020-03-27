@@ -2,35 +2,34 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const baseURL = 'api.openweathermap.org/data/2.5/weather?q='
-const keyAPI = '19bf54806da80afdc27f3660b45b2382'
-const units = 'metric'
-const lang = 'fr'
+import {baseURLAPI, keyAPI, unitsAPI, langAPI} from '../services/URLAPI'
 
-const useWeatherAPI = (cityName) => {
+const useWeatherAPI = () => {
     const [apiData, setApiData] = useState(null)
+    const [cityAPI, setCityAPI] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const [isError, setIsError] = useState(false)
+    const [cityIsSelected, setCityIsSelected] = useState(false)
 
     React.useEffect(() => {
         const fetchData = async () => {
             setIsError(false)
             setIsLoading(true)
-
             try {
                 const result = await axios(
-                    'https://' + baseURL + cityName + '&APPID=' + keyAPI + '&units=' + units + '&lang=' + lang
+                    'https://' + baseURLAPI + cityAPI + '&APPID=' + keyAPI + '&units=' + unitsAPI + '&lang=' + langAPI
                 )
                 setApiData(result.data)
-
+                setCityIsSelected(true)
             } catch (error) {
                 setIsError(true)
             }
             setIsLoading(false)
         }
-    fetchData()
-    }, [])
-    return [{ apiData, isLoading, isError }]
+        cityAPI !== '' && fetchData()
+    }, [cityAPI])
+
+    return [{ apiData, isLoading, isError, cityIsSelected }, setCityAPI]
 }
 
 export default useWeatherAPI

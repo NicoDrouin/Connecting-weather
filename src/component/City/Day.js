@@ -7,5 +7,5 @@ const Day = () => {
         </div>
     )
 }
- 
+
 export default Day
