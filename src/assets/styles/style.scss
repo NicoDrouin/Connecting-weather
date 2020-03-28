@@ -128,11 +128,43 @@ button {
 .footer {
     color: white;
     background-color: #191f24;
+    padding: 0 32px;
 }
 
 .header {
-    line-height: 58px;
+    display: flex;
+    align-items: center;
+    height: 58px;
     border-top: 2px solid red;
+
+    > img {
+        vertical-align: middle;
+    }
+
+    > div {
+        margin: 0 16px;
+    
+        > p {
+            margin: 0;
+            line-height: 1.25;
+            text-transform: uppercase;
+
+            &:first-of-type {
+                font-size: 15px;
+            }
+
+            &:last-of-type {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    > p {
+        text-align: right;
+        flex-grow: 1;
+        font-style: italic;
+    }
 }
 
 .footer {
@@ -155,7 +187,7 @@ button {
     flex-grow: 1;
     position: relative;
     overflow: hidden;
-    background-color: #29a2ff;
+    background-color: #0a95ff;
     box-shadow: inset 0 0 50px 0 rgba(59, 42, 42, 0.6),
                 inset 0 50px 45px 0 rgba(0, 0, 0, 0.35);
 
@@ -181,25 +213,22 @@ button {
     form {
         padding-bottom: 11%;
         text-align: center;
+    }
 
-        > label {
-            display: block;
-            margin-bottom: 8px;
-            font-family: lobster2;
-            font-size: 42px;
-            color: #009900;
-            text-shadow: 1px 1px 1px #0033003b;
-        }
-
-        > div {
-            height: 38px;
-        }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-family: lobster2;
+        font-size: 42px;
+        color: #009900;
+        text-shadow: 1px 1px 1px #0033003b;
     }
 
     input {
         width: 230px;
         height: 38px;
         padding: 8px;
+        vertical-align: bottom;
         border: 1px solid #009900;
         border-radius: 19px;
         box-shadow: 0;

@@ -7,15 +7,15 @@ const CityInput = ({currentCity, setCurrentCity, doFetch}) => {
             doFetch(currentCity)
             event.preventDefault()
         }}>
-            <label>Votre ville</label>
-            <div>
-                <input
-                    type = 'text'
-                    value = {currentCity}
-                    onChange = {event => setCurrentCity(event.target.value)}
-                />
-                <button type='submit'>Search</button>
-            </div>
+        <label htmlFor='city'>Votre ville:</label>
+            <input
+                type = 'text'
+                value = {currentCity}
+                name = 'city'
+                id = 'city'
+                onChange = {event => setCurrentCity(event.target.value)}
+            />
+            <button type='submit'>Search</button>
         </form>
     )
 }
