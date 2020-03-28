@@ -13,21 +13,19 @@ const Entrance = ({
     }) => {
 
     return (
-        <div>
-            <header>
-                LogoImg
-            </header>
-            <main>
+        <main className='entrance'>
+            <section className='search-box'>
                 <CityInput
                     currentCity = {currentCity}
                     setCurrentCity = {setCurrentCity}
                     doFetch = {doFetch}
                 />
-                {apiDataCurrentDay && apiDataCurrentDay.name}<br/>
-                {isLoadingCurrentDay ? 'isLoadingCurrentDay' : 'isNotLoadingCurrentDay'}<br/>
-                {isErrorCurrentDay ? 'isErrorCurrentDay' : 'isNotErrorCurrentDay'}
-            </main>
-        </div>
+                <p className='error-messages'>
+                    {isErrorCurrentDay && 'Erreur! Vérifiez votre aurtograffe !!!'}
+                </p>
+            </section>
+            {/* {isLoadingCurrentDay ? 'isLoadingCurrentDay' : 'isNotLoadingCurrentDay'}<br/> */}
+        </main>
     )
 }
 
