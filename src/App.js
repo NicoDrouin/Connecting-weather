@@ -39,7 +39,6 @@ const App = () => {
                     doFetch = {doFetch}
                 />
                 :
-                <Fragment>
                     <Entrance
                         currentCity = {currentCity}
                         setCurrentCity = {setCurrentCity}
@@ -47,7 +46,6 @@ const App = () => {
                         isErrorCurrentDay = {isErrorCurrentDay}
                         doFetch = {doFetch}
                     />
-                </Fragment>
                 }
                 <Footer/>
             </Fragment>

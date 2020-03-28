@@ -54,8 +54,8 @@ main {
     padding: 48px 0;
     overflow: hidden;
     background-color: #0a95ff;
-    box-shadow: inset 0 0 50px 0 rgba(59, 42, 42, 0.6),
-                inset 0 50px 45px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 0 50px 0 rgba(59, 42, 42, .6),
+                inset 0 50px 45px 0 rgba(black, .35);
 }
 
 .container {
@@ -133,7 +133,8 @@ button:-moz-focusring,
 
 /*  ICONS
    ============================== */
-   @font-face {
+
+@font-face {
     font-family: 'icomoon';
     src: url('../fonts/icomoon.eot?fw3eh7');
     src: url('../fonts/icomoon.eot?fw3eh7#iefix') format('embedded-opentype'),
@@ -191,12 +192,4 @@ button:-moz-focusring,
 
 [class^=only-] {
     display: none;
-}
-
-.city .only-city {
-    display: inline;
-}
-
-.city > div {
-    margin-top: 0;
 }
