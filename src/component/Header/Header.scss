@@ -2,8 +2,9 @@
    ============================== */
 
 .header {
-    height: 58px;
+    height: 60px;
     border-top: 2px solid red;
+    display: flex;
 
     > div {
         flex-direction: row;
