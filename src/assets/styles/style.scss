@@ -162,3 +162,16 @@ button:-moz-focusring,
     color: white;
     background-color: #191f24;
 }
+
+
+
+/*  HELPERS
+   ============================== */
+
+[class^=only-] {
+    display: none;
+}
+
+.city .only-city {
+    display: inline;
+}

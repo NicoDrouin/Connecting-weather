@@ -18,7 +18,7 @@ const City = ({
     }) => {
 
     return (
-        <div>
+        <main className='city'>
             <CityInput
                 currentCity = {currentCity}
                 setCurrentCity = {setCurrentCity}

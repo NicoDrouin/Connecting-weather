@@ -7,7 +7,10 @@ const CityInput = ({currentCity, setCurrentCity, doFetch}) => {
             doFetch(currentCity)
             event.preventDefault()
         }}>
-        <label htmlFor='city'>Votre ville:</label>
+            <label htmlFor='city'>
+                <span className='only-entrance'>Votre</span>
+                <span className='only-city'>Nouvelle</span> ville:
+            </label>
             <input
                 type = 'text'
                 value = {currentCity}
