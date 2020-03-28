@@ -2,7 +2,16 @@ import React from 'react'
 
 import CityInput from '../CityInput'
 
-const Entrance = ({currentCity, setCurrentCity, apiData, isLoading, isError, doFetch}) => {
+
+const Entrance = ({
+        currentCity,
+        setCurrentCity,
+        apiDataCurrentDay,
+        isLoadingCurrentDay,
+        isErrorCurrentDay,
+        doFetch
+    }) => {
+
     return (
         <div>
             <header>
@@ -14,9 +23,9 @@ const Entrance = ({currentCity, setCurrentCity, apiData, isLoading, isError, doF
                     setCurrentCity = {setCurrentCity}
                     doFetch = {doFetch}
                 />
-                {apiData && apiData.name}<br/>
-                {isLoading ? 'isLoading' : 'isNotLoading'}<br/>
-                {isError ? 'isError' : 'isNotError'}
+                {apiDataCurrentDay && apiDataCurrentDay.name}<br/>
+                {isLoadingCurrentDay ? 'isLoadingCurrentDay' : 'isNotLoadingCurrentDay'}<br/>
+                {isErrorCurrentDay ? 'isErrorCurrentDay' : 'isNotErrorCurrentDay'}
             </main>
         </div>
     )

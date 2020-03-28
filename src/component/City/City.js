@@ -3,10 +3,19 @@ import React from 'react'
 import CityInput from '../CityInput'
 import Current from './Current'
 import Week from './Week'
-import Day from './Day'
 
 
-const City = ({currentCity, setCurrentCity, apiData, isLoading, isError, doFetch}) => {
+const City = ({
+        currentCity,
+        setCurrentCity,
+        apiDataCurrentDay,
+        isLoadingCurrentDay,
+        isErrorCurrentDay,
+        apiDataWeek,
+        isLoadingWeek,
+        isErrorWeek,
+        doFetch
+    }) => {
 
     return (
         <div>
@@ -17,12 +26,15 @@ const City = ({currentCity, setCurrentCity, apiData, isLoading, isError, doFetch
             />
             City is selected
             <Current
-                apiData = {apiData}
-                isLoading = {isLoading}
-                isError = {isError}
+                apiDataCurrentDay = {apiDataCurrentDay}
+                isLoadingCurrentDay = {isLoadingCurrentDay}
+                isErrorCurrentDay = {isErrorCurrentDay}
             />
-            <Week/>
-            <Day/>
+            <Week
+                apiDataWeek = {apiDataWeek}
+                isLoadingWeek = {isLoadingWeek}
+                isErrorWeek = {isErrorWeek}
+            />
         </div>
     )
 }

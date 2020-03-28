@@ -1,18 +1,19 @@
 import React from 'react'
 
-const Current = ( { apiData, isLoading, isError } ) => {
+
+const Current = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) => {
     return (
         <div>
-            {isError ? 'error' : 'noErr'}
+            {isErrorCurrentDay ? 'errorCurrentDay' : 'noErrorCurrentDay'}
             {
-                isLoading ?
-                'loading' :
-                apiData &&
+                isLoadingCurrentDay ?
+                'loadingCurrentDay' :
+                apiDataCurrentDay &&
                 <div>
-                    <div>{apiData.main.temp}</div>
+                    <div>{apiDataCurrentDay.main.temp}</div>
                     <div>
-                        {apiData.name}<br/>
-                        {apiData.main.description}
+                        {apiDataCurrentDay.name}<br/>
+                        {apiDataCurrentDay.main.description}
                     </div>
                 </div>
             }

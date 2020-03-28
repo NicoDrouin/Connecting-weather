@@ -1,7 +1,7 @@
 import React from 'react'
 
-const CityInput = ({currentCity, setCurrentCity, doFetch}) => {
 
+const CityInput = ({currentCity, setCurrentCity, doFetch}) => {
     return (
         <form onSubmit={event => {
             doFetch(currentCity)
@@ -17,5 +17,5 @@ const CityInput = ({currentCity, setCurrentCity, doFetch}) => {
         </form>
     )
 }
- 
+
 export default CityInput

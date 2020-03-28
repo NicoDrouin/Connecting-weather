@@ -1,16 +1,23 @@
 import React, { useState } from 'react'
 
+import useWeatherAPI from './services/httpService'
+
 import City from './component/City/City'
 import Entrance from './component/Entrance/Entrance'
-
-import useWeatherAPI from './services/httpService'
 
 
 const App = () => {
 
     const [currentCity, setCurrentCity] = useState('')
-    const [{ apiData, isLoading, isError, cityIsSelected }, doFetch] = useWeatherAPI()
-
+    const [{
+        apiDataCurrentDay,
+        isLoadingCurrentDay,
+        isErrorCurrentDay,
+        apiDataWeek,
+        isLoadingWeek,
+        isErrorWeek,
+        cityIsSelected
+    }, doFetch] = useWeatherAPI()
 
 	return (
 		<div className="App">
@@ -20,18 +27,21 @@ const App = () => {
             <City
                 currentCity = {currentCity}
                 setCurrentCity = {setCurrentCity}
-                apiData = {apiData}
-                isLoading = {isLoading}
-                isError = {isError}
+                apiDataCurrentDay = {apiDataCurrentDay}
+                isLoadingCurrentDay = {isLoadingCurrentDay}
+                isErrorCurrentDay = {isErrorCurrentDay}
+                apiDataWeek = {apiDataWeek}
+                isLoadingWeek = {isLoadingWeek}
+                isErrorWeek = {isErrorWeek}
                 doFetch = {doFetch}
             />
             :
             <Entrance
                 currentCity = {currentCity}
                 setCurrentCity = {setCurrentCity}
-                apiData = {apiData}
-                isLoading = {isLoading}
-                isError = {isError}
+                apiDataCurrentDay = {apiDataCurrentDay}
+                isLoadingCurrentDay = {isLoadingCurrentDay}
+                isErrorCurrentDay = {isErrorCurrentDay}
                 doFetch = {doFetch}
             />
             }

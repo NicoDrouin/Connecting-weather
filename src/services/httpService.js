@@ -1,35 +1,68 @@
 // https://www.robinwieruch.de/react-hooks-fetch-data
 import React, { useState } from 'react'
+
 import axios from 'axios'
 
-import {baseURLAPI, keyAPI, unitsAPI, langAPI} from '../services/URLAPI'
+import {baseURLAPI, keyAPI, unitsAPI, langAPI} from './URLAPI'
+
 
 const useWeatherAPI = () => {
-    const [apiData, setApiData] = useState(null)
     const [cityAPI, setCityAPI] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
-    const [isError, setIsError] = useState(false)
     const [cityIsSelected, setCityIsSelected] = useState(false)
 
+    const [apiDataCurrentDay, setApiDataCurrentDay] = useState(null)
+    const [isLoadingCurrentDay, setIsLoadingCurrentDay] = useState(false)
+    const [isErrorCurrentDay, setIsErrorCurrentDay] = useState(false)
+
+    const [apiDataWeek, setApiDataWeek] = useState(null)
+    const [isLoadingWeek, setIsLoadingWeek] = useState(false)
+    const [isErrorWeek, setIsErrorWeek] = useState(false)
+
     React.useEffect(() => {
-        const fetchData = async () => {
-            setIsError(false)
-            setIsLoading(true)
+
+        const fetchDataCurrentDay = async () => {
+            setIsErrorCurrentDay(false)
+            setIsLoadingCurrentDay(true)
             try {
                 const result = await axios(
-                    'https://' + baseURLAPI + cityAPI + '&APPID=' + keyAPI + '&units=' + unitsAPI + '&lang=' + langAPI
+                    'https://' + baseURLAPI + 'weather?q=' + cityAPI + '&APPID=' + keyAPI + '&units=' + unitsAPI + '&lang=' + langAPI
                 )
-                setApiData(result.data)
+                setApiDataCurrentDay(result.data)
+                fetchDataWeek()
+            } catch (error) {
+                setIsErrorCurrentDay(true)
+            }
+            setIsLoadingCurrentDay(false)
+        }
+
+        const fetchDataWeek = async () => {
+            setIsErrorWeek(false)
+            setIsLoadingWeek(true)
+            try {
+                const result = await axios(
+                    'https://' + baseURLAPI + 'forecast?q=' + cityAPI + '&APPID=' + keyAPI + '&units=' + unitsAPI + '&lang=' + langAPI
+                )
+                setApiDataWeek(result.data)
                 setCityIsSelected(true)
             } catch (error) {
-                setIsError(true)
+                setIsErrorWeek(true)
             }
-            setIsLoading(false)
+            setIsLoadingWeek(false)
         }
-        cityAPI !== '' && fetchData()
+
+        cityAPI !== '' && fetchDataCurrentDay()
     }, [cityAPI])
 
-    return [{ apiData, isLoading, isError, cityIsSelected }, setCityAPI]
+    return [{
+        apiDataCurrentDay,
+        isLoadingCurrentDay,
+        isErrorCurrentDay,
+        apiDataWeek,
+        isLoadingWeek,
+        isErrorWeek,
+        cityIsSelected
+        }, setCityAPI
+    ]
 }
 
 export default useWeatherAPI
