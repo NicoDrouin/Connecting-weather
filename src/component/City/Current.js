@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 
 const Current = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) => {
     return (
-        <div>
+        <Fragment>
             {isErrorCurrentDay ? 'errorCurrentDay' : 'noErrorCurrentDay'}
             {
                 isLoadingCurrentDay ?
@@ -17,7 +17,7 @@ const Current = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) =>
                     </div>
                 </div>
             }
-        </div>
+        </Fragment>
     )
 }
 

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 
 const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
 
     return (
-        <div>
+        <Fragment>
             Météo de la semaine<br/>
             {
                 isLoadingWeek ?
@@ -21,7 +21,7 @@ const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
                     )
             }
             {isErrorWeek && 'errorWeek'}
-        </div>
+        </Fragment>
     )
 }
 

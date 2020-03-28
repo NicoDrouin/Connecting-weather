@@ -2,49 +2,51 @@
    ============================== */
 
 .footer {
-    width: 100%;
-    padding: 72px 32px 48px;
-    text-align: center;
+    padding: 72px 0 48px;
     background-image: url(../../assets/img/grass.svg);
     background-size: auto 56px;
     background-repeat: repeat-x;
 
-    > hr {
-        margin: 42px 0;
-        border-width: 0 0 1px;
-    }
+    > div {
 
-    > ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        > hr {
+            width: 100%;
+            margin: 42px 0;
+            border-width: 0 0 1px;
+        }
 
-        > li {
-            display: inline-block;
-            margin: 0 4px;
+        > ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
 
-            &:first-of-type {
-                margin-left: 0;
-            }
+            > li {
+                display: inline-block;
+                margin: 0 4px;
 
-            &:last-of-type {
-                margin-right: 0;
-            }
-
-            > a {
-                color: white;
-                transition: color .2s;
-
-                &:focus,
-                &:hover,
-                &:active {
-                    color: #a0a0a0;
+                &:first-of-type {
+                    margin-left: 0;
                 }
-            }
 
-            &:not(:last-of-type):after {
-                content: '-';
-                margin-left: 12px;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                > a {
+                    color: white;
+                    transition: color .2s;
+
+                    &:focus,
+                    &:hover,
+                    &:active {
+                        color: #a0a0a0;
+                    }
+                }
+
+                &:not(:last-of-type):after {
+                    content: '-';
+                    margin-left: 12px;
+                }
             }
         }
     }

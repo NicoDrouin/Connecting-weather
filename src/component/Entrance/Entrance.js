@@ -14,16 +14,18 @@ const Entrance = ({
 
     return (
         <main className='entrance'>
-            <section className='search-box'>
-                <CityInput
-                    currentCity = {currentCity}
-                    setCurrentCity = {setCurrentCity}
-                    doFetch = {doFetch}
-                />
-                <p className='error-messages'>
-                    {isErrorCurrentDay && 'Erreur! Vérifiez votre aurtograffe !!!'}
-                </p>
-            </section>
+            <div className='container'>
+                <section className='search-box'>
+                    <CityInput
+                        currentCity = {currentCity}
+                        setCurrentCity = {setCurrentCity}
+                        doFetch = {doFetch}
+                    />
+                    <p className='error-messages'>
+                        {isErrorCurrentDay && 'Erreur! Vérifiez votre aurtograffe !!!'}
+                    </p>
+                </section>
+            </div>
             {/* {isLoadingCurrentDay ? 'isLoadingCurrentDay' : 'isNotLoadingCurrentDay'}<br/> */}
         </main>
     )

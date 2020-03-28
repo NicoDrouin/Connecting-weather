@@ -19,23 +19,25 @@ const City = ({
 
     return (
         <main className='city'>
-            <CityInput
-                currentCity = {currentCity}
-                setCurrentCity = {setCurrentCity}
-                doFetch = {doFetch}
-            />
-            City is selected
-            <Current
-                apiDataCurrentDay = {apiDataCurrentDay}
-                isLoadingCurrentDay = {isLoadingCurrentDay}
-                isErrorCurrentDay = {isErrorCurrentDay}
-            />
-            <Week
-                apiDataWeek = {apiDataWeek}
-                isLoadingWeek = {isLoadingWeek}
-                isErrorWeek = {isErrorWeek}
-            />
-        </div>
+            <div className='container'>
+                <CityInput
+                    currentCity = {currentCity}
+                    setCurrentCity = {setCurrentCity}
+                    doFetch = {doFetch}
+                />
+                City is selected
+                <Current
+                    apiDataCurrentDay = {apiDataCurrentDay}
+                    isLoadingCurrentDay = {isLoadingCurrentDay}
+                    isErrorCurrentDay = {isErrorCurrentDay}
+                />
+                <Week
+                    apiDataWeek = {apiDataWeek}
+                    isLoadingWeek = {isLoadingWeek}
+                    isErrorWeek = {isErrorWeek}
+                />
+            </div>
+        </main>
     )
 }
 
