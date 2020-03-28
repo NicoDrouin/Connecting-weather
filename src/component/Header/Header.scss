@@ -1,0 +1,40 @@
+/*  HEADER
+   ============================== */
+
+   .header {
+    display: flex;
+    align-items: center;
+    height: 58px;
+    padding: 0 32px;
+    border-top: 2px solid red;
+
+    > img {
+        vertical-align: middle;
+    }
+
+    > div {
+        margin: 0 16px;
+    
+        > p {
+            margin: 0;
+            line-height: 1.25;
+            text-transform: uppercase;
+
+            &:first-of-type {
+                font-size: 15px;
+                letter-spacing: .2px;
+            }
+
+            &:last-of-type {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    > p {
+        text-align: right;
+        flex-grow: 1;
+        font-style: italic;
+    }
+}

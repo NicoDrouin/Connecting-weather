@@ -1,0 +1,137 @@
+/*  ENTRANCE
+   ============================== */
+
+.entrance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: #0a95ff;
+    box-shadow: inset 0 0 50px 0 rgba(59, 42, 42, 0.6),
+                inset 0 50px 45px 0 rgba(0, 0, 0, 0.35);
+
+    .search-box {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        min-width: 300px;
+        width: 92%;
+        max-width: 480px;
+        background-image: url(../../assets/img/logoClouds.svg);
+        background-position: bottom;
+        background-repeat: no-repeat;
+
+        &:after {
+            content: '';
+            display: block;
+            padding-bottom: 87.640836638%;
+        }
+    }
+
+    form {
+        padding-bottom: 11%;
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-family: lobster2;
+        font-size: 42px;
+        color: #009900;
+        text-shadow: 1px 1px 1px #0033003b;
+    }
+
+    input {
+        width: 230px;
+        height: 38px;
+        padding: 8px;
+        vertical-align: bottom;
+        border: 1px solid #009900;
+        border-radius: 19px;
+        box-shadow: 0;
+        transition: box-shadow .3s;
+
+        &:focus,
+        &:active {
+            box-shadow: inset 0 0 0 1px #009900;
+        }
+    }
+
+    button {
+        height: 38px;
+        margin-left: 8px;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        border: 0;
+        background-color: #009900;
+        color: white;
+        border-radius: 19px;
+        text-transform: uppercase;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: #007a00;
+        }
+    }
+
+    .error-messages {
+        position: absolute;
+        bottom: calc(11% - 28px);
+        margin: 0;
+        color: red;
+        font-weight: 600;
+        text-decoration: underline;
+        border-radius: 14px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 4269px;
+        height: 4269px;
+        top: 50%;
+        margin-top: -2134.5px;
+        left: 50%;
+        margin-left: -2134.5px;
+        background: url(../../assets/img/ray.svg) 0 0 no-repeat;
+        border-radius: 50%;
+        -webkit-animation: 5s ray ease-out;
+        -moz-animation: 5s ray ease-out;
+        -o-animation: 5s ray ease-out;
+        animation: 5s ray ease-out;
+        -webkit-animation-fill-mode: forwards;
+    }
+}
+
+@-webkit-keyframes ray {
+    to {
+        -webkit-transform: rotate(30deg);
+    }
+}
+
+@-moz-keyframes ray {
+    to {
+        -moz-transform: rotate(30deg);
+    }
+}
+
+@-o-keyframes ray {
+    to {
+        -o-transform: rotate(30deg);
+    }
+}
+
+@keyframes ray {
+    to {
+        transform: rotate(30deg);
+    }
+}

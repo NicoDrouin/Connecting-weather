@@ -1,0 +1,51 @@
+/*  FOOTER
+   ============================== */
+
+.footer {
+    width: 100%;
+    padding: 72px 32px 48px;
+    text-align: center;
+    background-image: url(../../assets/img/grass.svg);
+    background-size: auto 56px;
+    background-repeat: repeat-x;
+
+    > hr {
+        margin: 42px 0;
+        border-width: 0 0 1px;
+    }
+
+    > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            display: inline-block;
+            margin: 0 4px;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            > a {
+                color: white;
+                transition: color .2s;
+
+                &:focus,
+                &:hover,
+                &:active {
+                    color: #a0a0a0;
+                }
+            }
+
+            &:not(:last-of-type):after {
+                content: '-';
+                margin-left: 12px;
+            }
+        }
+    }
+}

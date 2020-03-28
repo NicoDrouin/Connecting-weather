@@ -4,8 +4,8 @@ import useWeatherAPI from './services/httpService'
 
 import City from './component/City/City'
 import Entrance from './component/Entrance/Entrance'
-import Header from './component/Header'
-import Footer from './component/Footer'
+import Header from './component/Header/Header'
+import Footer from './component/Footer/Footer'
 
 
 const App = () => {
@@ -43,7 +43,6 @@ const App = () => {
                     <Entrance
                         currentCity = {currentCity}
                         setCurrentCity = {setCurrentCity}
-                        apiDataCurrentDay = {apiDataCurrentDay}
                         isLoadingCurrentDay = {isLoadingCurrentDay}
                         isErrorCurrentDay = {isErrorCurrentDay}
                         doFetch = {doFetch}

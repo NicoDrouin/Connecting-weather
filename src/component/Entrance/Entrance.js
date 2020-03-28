@@ -1,4 +1,5 @@
 import React from 'react'
+import './Entrance.scss'
 
 import CityInput from '../CityInput'
 
@@ -6,7 +7,6 @@ import CityInput from '../CityInput'
 const Entrance = ({
         currentCity,
         setCurrentCity,
-        apiDataCurrentDay,
         isLoadingCurrentDay,
         isErrorCurrentDay,
         doFetch
