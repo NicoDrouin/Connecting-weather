@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react'
 
 import useWeatherAPI from './services/httpService'
 
-import City from './component/City/City'
+import City from './component/City/CityResults/CityResults'
 import Entrance from './component/Entrance/Entrance'
 import Header from './component/Header/Header'
 import Footer from './component/Footer/Footer'
@@ -39,13 +39,13 @@ const App = () => {
                     doFetch = {doFetch}
                 />
                 :
-                    <Entrance
-                        currentCity = {currentCity}
-                        setCurrentCity = {setCurrentCity}
-                        isLoadingCurrentDay = {isLoadingCurrentDay}
-                        isErrorCurrentDay = {isErrorCurrentDay}
-                        doFetch = {doFetch}
-                    />
+                <Entrance
+                    currentCity = {currentCity}
+                    setCurrentCity = {setCurrentCity}
+                    isLoadingCurrentDay = {isLoadingCurrentDay}
+                    isErrorCurrentDay = {isErrorCurrentDay}
+                    doFetch = {doFetch}
+                />
                 }
                 <Footer/>
             </Fragment>

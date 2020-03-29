@@ -3,21 +3,27 @@ import React, { Fragment } from 'react'
 
 const Current = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) => {
     return (
-        <Fragment>
-            {isErrorCurrentDay ? 'errorCurrentDay' : 'noErrorCurrentDay'}
+        <section className='widget-current'>
+            {/* {isErrorCurrentDay ? 'errorCurrentDay' : 'noErrorCurrentDay'} */}
             {
                 isLoadingCurrentDay ?
                 'loadingCurrentDay' :
                 apiDataCurrentDay &&
-                <div>
-                    <div>{apiDataCurrentDay.main.temp}</div>
-                    <div>
-                        {apiDataCurrentDay.name}<br/>
-                        {apiDataCurrentDay.main.description}
+                <Fragment>
+                    <div className='name'>
+                        {apiDataCurrentDay.name}
                     </div>
-                </div>
+                    <div className='bottom'>
+                        <div className='temp'>
+                            {apiDataCurrentDay.main.temp + '°C'}
+                        </div>
+                        <div className='icon'>
+                            {apiDataCurrentDay.weather[0].id}
+                        </div>
+                    </div>
+                </Fragment>
             }
-        </Fragment>
+        </section>
     )
 }
 

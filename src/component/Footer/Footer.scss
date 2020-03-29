@@ -2,12 +2,16 @@
    ============================== */
 
 .footer {
-    padding: 72px 0 48px;
+    padding: 96px 0 48px;
     background-image: url(../../assets/img/grass.svg);
     background-size: auto 56px;
     background-repeat: repeat-x;
 
     > .container {
+
+        > p {
+            margin: 0;
+        }
 
         > hr {
             width: 100%;
@@ -20,7 +24,7 @@
             padding: 0;
             list-style: none;
 
-            > li {
+            li {
                 display: inline-block;
                 margin: 0 4px;
 

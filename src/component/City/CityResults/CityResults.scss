@@ -1,0 +1,48 @@
+/*  CITY RESULTS
+   ============================== */
+
+.city {
+
+    > .container {
+        margin-top: 0;
+
+        .top {
+            display: flex;
+            width: 100%;
+    
+            > section,
+            > form {
+                width: 50%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.widget-current {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-shadow: 0 0 1px black;
+
+    .name {
+        font-size: 64px;
+    }
+
+    .bottom {
+        display: flex;
+    }
+
+    .temp {
+        padding-right: 24px;
+        font-size: 48px;
+    }
+
+    .icon {
+    }
+}
+
+.city .only-city {
+    display: inline;
+}
