@@ -1,0 +1,76 @@
+/*  CURRENT DAY
+   ============================== */
+
+@import '../../../assets/styles/colors';
+
+.widget-current {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 0 0 1px black;
+
+    .name {
+        font-size: 64px;
+        padding-bottom: 6px;
+    }
+
+    .bottom {
+        display: flex;
+    }
+
+    .temp {
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    .weather-description {
+        font-size: 38px;
+
+        &:first-letter {
+            text-transform: capitalize;
+        }
+    }
+
+    [class^=icon-current-] {
+        font-size: 120px;
+        margin-left: 24px;
+    }
+}
+
+[class^=icon-current-] {
+    width: 112px;
+    height: 112px;
+    background-size: 112px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 0 22px 4px white;
+}
+
+.icon-current-cloud {
+    background-image: url(../../../assets/img/weather/current-cloud.svg);
+}
+
+.icon-current-fewClouds {
+    background-image: url(../../../assets/img/weather/current-fewClouds.svg);
+}
+
+.icon-current-fog {
+    background-image: url(../../../assets/img/weather/current-fog.svg);
+}
+
+.icon-current-rain {
+    background-image: url(../../../assets/img/weather/current-rain.svg);
+}
+
+.icon-current-snow {
+    background-image: url(../../../assets/img/weather/current-snow.svg);
+}
+
+.icon-current-sun {
+    background-image: url(../../../assets/img/weather/current-sun.svg);
+}
+
+.icon-current-thunder {
+    background-image: url(../../../assets/img/weather/current-thunder.svg);
+}
