@@ -1,7 +1,7 @@
 import React from 'react'
 import './CityResults.scss'
 
-import SearchInput from '../../SearchInput'
+import SearchBox from '../../SearchBox/SearchBox'
 import CurrentDay from '../CurrentDay/CurrentDay'
 import Week from '../Week'
 
@@ -28,10 +28,11 @@ const City = ({
                         isLoadingCurrentDay = {isLoadingCurrentDay}
                         isErrorCurrentDay = {isErrorCurrentDay}
                     />
-                    <SearchInput
+                    <SearchBox
                         currentCity = {currentCity}
                         setCurrentCity = {setCurrentCity}
                         doFetch = {doFetch}
+                        isErrorCurrentDay = {isErrorCurrentDay}
                     />
                 </div>
                 <Week

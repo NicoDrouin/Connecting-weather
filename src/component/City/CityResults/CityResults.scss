@@ -1,6 +1,8 @@
 /*  CITY RESULTS
    ============================== */
 
+@import '../../../assets/styles/colors';
+
 .city {
 
     > .container {
@@ -9,13 +11,47 @@
         .top {
             display: flex;
             width: 100%;
-    
-            > section,
-            > form {
+
+            > section {
                 width: 50%;
-                text-align: center;
+            }
+
+            > .widget-current {
+                text-align: right;
             }
         }
+    }
+
+    .search-box {
+        flex-direction: column;
+        position: relative;
+        text-align: center;
+    }
+
+    input {
+        border: 1px solid $tertiaryColor;
+
+        &:focus,
+        &:active {
+            box-shadow: inset 0 0 0 1px $tertiaryColorActive;
+        }
+    }
+
+    button {
+        background-color: $tertiaryColor;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $tertiaryColorActive;
+        }
+    }
+
+    .error-messages {
+        top: calc(50% + 52px);
+        padding: 4px 8px;
+        background-color: #ffffff80;
+        border-radius: 10px;
     }
 }
 

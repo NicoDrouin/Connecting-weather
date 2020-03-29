@@ -1,0 +1,49 @@
+/*  SEARCH BOX
+   ============================== */
+
+@import '../../assets/styles/colors';
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-family: lobster2;
+        font-size: 42px;
+        text-shadow: 1px 1px 1px #0033003b;
+    }
+
+    input {
+        width: 230px;
+        height: 38px;
+        padding: 8px;
+        vertical-align: bottom;
+        border-radius: 19px;
+        box-shadow: 0;
+        transition: box-shadow .3s;
+    }
+
+    button {
+        height: 38px;
+        margin-left: 8px;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        border: 0;
+        color: $primaryColor;
+        border-radius: 19px;
+        text-transform: uppercase;
+        transition: all .3s;
+        cursor: pointer;
+    }
+
+    .error-messages {
+        position: absolute;
+        color: $errorColor;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+}

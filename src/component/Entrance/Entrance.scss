@@ -32,23 +32,11 @@
     }
 
     label {
-        display: block;
-        margin-bottom: 10px;
-        font-family: lobster2;
-        font-size: 42px;
         color: $secondaryColor;
-        text-shadow: 1px 1px 1px #0033003b;
     }
 
     input {
-        width: 230px;
-        height: 38px;
-        padding: 8px;
-        vertical-align: bottom;
         border: 1px solid $secondaryColor;
-        border-radius: 19px;
-        box-shadow: 0;
-        transition: box-shadow .3s;
 
         &:focus,
         &:active {
@@ -57,18 +45,7 @@
     }
 
     button {
-        height: 38px;
-        margin-left: 8px;
-        padding: 8px 12px;
-        font-size: 14px;
-        font-weight: 600;
-        border: 0;
         background-color: $secondaryColor;
-        color: $primaryColor;
-        border-radius: 19px;
-        text-transform: uppercase;
-        transition: all .3s;
-        cursor: pointer;
 
         &:hover,
         &:focus,
@@ -78,13 +55,8 @@
     }
 
     .error-messages {
-        position: absolute;
         bottom: calc(11% - 28px);
         margin: 0;
-        color: $errorColor;
-        font-weight: 600;
-        text-decoration: underline;
-        border-radius: 14px;
     }
 
     &::before {

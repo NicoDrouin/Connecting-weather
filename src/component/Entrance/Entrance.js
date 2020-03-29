@@ -1,7 +1,8 @@
 import React from 'react'
 import './Entrance.scss'
+import '../SearchBox/SearchBox.scss'
 
-import SearchInput from '../SearchInput'
+import SearchBox from '../SearchBox/SearchBox'
 
 
 const Entrance = ({
@@ -15,16 +16,12 @@ const Entrance = ({
     return (
         <main className='entrance'>
             <div className='container'>
-                <section className='search-box'>
-                    <SearchInput
-                        currentCity = {currentCity}
-                        setCurrentCity = {setCurrentCity}
-                        doFetch = {doFetch}
-                    />
-                    <p className='error-messages'>
-                        {isErrorCurrentDay && 'Erreur! Vérifiez votre aurtograffe !!!'}
-                    </p>
-                </section>
+                <SearchBox
+                    currentCity = {currentCity}
+                    setCurrentCity = {setCurrentCity}
+                    doFetch = {doFetch}
+                    isErrorCurrentDay = {isErrorCurrentDay}
+                />
             </div>
             {/* {isLoadingCurrentDay ? 'isLoadingCurrentDay' : 'isNotLoadingCurrentDay'}<br/> */}
         </main>
