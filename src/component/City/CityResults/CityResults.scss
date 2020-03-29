@@ -28,6 +28,7 @@
 
     .name {
         font-size: 64px;
+        line-height: 1;
     }
 
     .bottom {
@@ -35,11 +36,14 @@
     }
 
     .temp {
+        display: flex;
+        align-items: center;
         padding-right: 24px;
         font-size: 48px;
     }
 
-    .icon {
+    [class^=icon-] {
+        font-size: 120px;
     }
 }
 
