@@ -16,10 +16,10 @@ const Current = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) =>
                         {apiDataCurrentDay.name}
                     </div>
                     <div className='bottom'>
-                        <div className='temp'>
-                            {apiDataCurrentDay.main.temp + '°C'}
+                        <div className='left'>
+                            <div className='temp'>{apiDataCurrentDay.main.temp + '°C'}</div>
+                            <div className='weather-description'>{apiDataCurrentDay.weather[0].description}</div>
                         </div>
-                        {/* <div className={'icon-' + setIconWeather(parseInt(apiDataCurrentDay.weather[0].id))}></div> */}
                         <div className={'icon-current-' + setIconWeather(parseInt(apiDataCurrentDay.weather[0].id))}></div>
                     </div>
                 </Fragment>

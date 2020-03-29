@@ -29,7 +29,7 @@
 
     .name {
         font-size: 64px;
-        line-height: 1;
+        padding-bottom: 6px;
     }
 
     .bottom {
@@ -37,14 +37,21 @@
     }
 
     .temp {
-        display: flex;
-        align-items: center;
-        padding-right: 24px;
         font-size: 48px;
+        line-height: 1.2;
     }
 
-    [class^=icon-] {
+    .weather-description {
+        font-size: 38px;
+
+        &:first-letter {
+            text-transform: capitalize;
+        }
+    }
+
+    [class^=icon-current-] {
         font-size: 120px;
+        margin-left: 24px;
     }
 }
 
