@@ -3,7 +3,7 @@ import './CityResults.scss'
 
 import SearchBox from '../../SearchBox/SearchBox'
 import CurrentDay from '../CurrentDay/CurrentDay'
-import Week from '../Week'
+import Week from '../Week/Week'
 
 
 const City = ({
