@@ -1,7 +1,7 @@
 import React from 'react'
 import './Entrance.scss'
 
-import CityInput from '../CityInput'
+import SearchInput from '../SearchInput'
 
 
 const Entrance = ({
@@ -16,7 +16,7 @@ const Entrance = ({
         <main className='entrance'>
             <div className='container'>
                 <section className='search-box'>
-                    <CityInput
+                    <SearchInput
                         currentCity = {currentCity}
                         setCurrentCity = {setCurrentCity}
                         doFetch = {doFetch}
