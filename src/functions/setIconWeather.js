@@ -3,7 +3,7 @@ const setIconWeather = (weatherId) => {
     else if (weatherId === 801) return 'few-clouds'
     else if (weatherId === 800) return ('sun')
     else if (weatherId >= 701) return ('fog')
-    else if (weatherId >= 600) return ('snow')
+    else if (weatherId >= 600 || weatherId === 515) return ('snow')
     else if (weatherId >= 300) return ('rain')
     else if (weatherId >= 200) return ('thunder')
     else console.log('Houston, we\'ve had a problem.')

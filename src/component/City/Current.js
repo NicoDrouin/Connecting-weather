@@ -19,7 +19,8 @@ const Current = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) =>
                         <div className='temp'>
                             {apiDataCurrentDay.main.temp + '°C'}
                         </div>
-                        <div className={'icon-' + setIconWeather(parseInt(apiDataCurrentDay.weather[0].id))}></div>
+                        {/* <div className={'icon-' + setIconWeather(parseInt(apiDataCurrentDay.weather[0].id))}></div> */}
+                        <div className={'icon-current-' + setIconWeather(parseInt(apiDataCurrentDay.weather[0].id))}></div>
                     </div>
                 </Fragment>
             }

@@ -51,3 +51,41 @@
 .city .only-city {
     display: inline;
 }
+
+[class^=icon-current-] {
+    width: 112px;
+    height: 112px;
+    background-size: 112px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 0 22px 4px white;
+}
+
+.icon-current-cloud {
+    background-image: url(../../../assets/img/weather/current-cloud.svg);
+}
+
+.icon-current-fewClouds {
+    background-image: url(../../../assets/img/weather/current-fewClouds.svg);
+}
+
+.icon-current-fog {
+    background-image: url(../../../assets/img/weather/current-fog.svg);
+}
+
+.icon-current-rain {
+    background-image: url(../../../assets/img/weather/current-rain.svg);
+}
+
+.icon-current-snow {
+    background-image: url(../../../assets/img/weather/current-snow.svg);
+}
+
+.icon-current-sun {
+    background-image: url(../../../assets/img/weather/current-sun.svg);
+}
+
+.icon-current-thunder {
+    background-image: url(../../../assets/img/weather/current-thunder.svg);
+}
