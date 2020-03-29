@@ -1,9 +1,11 @@
 /*  HEADER
    ============================== */
 
+@import '../../assets/styles/colors';
+
 .header {
     height: 60px;
-    border-top: 2px solid red;
+    border-top: 2px solid $errorColor;
     display: flex;
 
     > .container {
