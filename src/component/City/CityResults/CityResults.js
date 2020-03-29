@@ -2,6 +2,7 @@ import React from 'react'
 import './CityResults.scss'
 
 import SearchInput from '../../SearchInput'
+import CurrentDay from '../CurrentDay/CurrentDay'
 import Week from '../Week'
 
 
@@ -22,7 +23,7 @@ const City = ({
             <div className='container'>
                 <div className='top'>
                     {/* City is selected */}
-                    <Current
+                    <CurrentDay
                         apiDataCurrentDay = {apiDataCurrentDay}
                         isLoadingCurrentDay = {isLoadingCurrentDay}
                         isErrorCurrentDay = {isErrorCurrentDay}

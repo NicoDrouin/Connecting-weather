@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
+import './CurrentDay.scss'
 
-import setIconWeather from '../../functions/setIconWeather'
+import setIconWeather from '../../../functions/setIconWeather'
 
 
-const Current = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) => {
+const CurrentDay = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) => {
     return (
         <section className='widget-current'>
             {/* {isErrorCurrentDay ? 'errorCurrentDay' : 'noErrorCurrentDay'} */}
@@ -28,4 +29,4 @@ const Current = ({apiDataCurrentDay, isLoadingCurrentDay, isErrorCurrentDay}) =>
     )
 }
 
-export default Current
+export default CurrentDay
