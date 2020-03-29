@@ -4,9 +4,10 @@
 @import '../../assets/styles/colors';
 
 .header {
+    display: flex;
+    flex-shrink: 0;
     height: 60px;
     border-top: 2px solid $errorColor;
-    display: flex;
 
     > .container {
         flex-direction: row;
