@@ -22,33 +22,33 @@ const App = () => {
     }, doFetch] = useWeatherAPI()
 
 	return (
-            <Fragment>
-                <Header/>
-                {
-                cityIsSelected
-                ?
-                <City
-                    currentCity = {currentCity}
-                    setCurrentCity = {setCurrentCity}
-                    apiDataCurrentDay = {apiDataCurrentDay}
-                    isLoadingCurrentDay = {isLoadingCurrentDay}
-                    isErrorCurrentDay = {isErrorCurrentDay}
-                    apiDataWeek = {apiDataWeek}
-                    isLoadingWeek = {isLoadingWeek}
-                    isErrorWeek = {isErrorWeek}
-                    doFetch = {doFetch}
-                />
-                :
-                <Entrance
-                    currentCity = {currentCity}
-                    setCurrentCity = {setCurrentCity}
-                    isLoadingCurrentDay = {isLoadingCurrentDay}
-                    isErrorCurrentDay = {isErrorCurrentDay}
-                    doFetch = {doFetch}
-                />
-                }
-                <Footer/>
-            </Fragment>
+        <Fragment>
+            <Header/>
+            {
+            cityIsSelected
+            ?
+            <City
+                currentCity = {currentCity}
+                setCurrentCity = {setCurrentCity}
+                apiDataCurrentDay = {apiDataCurrentDay}
+                isLoadingCurrentDay = {isLoadingCurrentDay}
+                isErrorCurrentDay = {isErrorCurrentDay}
+                apiDataWeek = {apiDataWeek}
+                isLoadingWeek = {isLoadingWeek}
+                isErrorWeek = {isErrorWeek}
+                doFetch = {doFetch}
+            />
+            :
+            <Entrance
+                currentCity = {currentCity}
+                setCurrentCity = {setCurrentCity}
+                isLoadingCurrentDay = {isLoadingCurrentDay}
+                isErrorCurrentDay = {isErrorCurrentDay}
+                doFetch = {doFetch}
+            />
+            }
+            <Footer/>
+        </Fragment>
 	)
 }
 

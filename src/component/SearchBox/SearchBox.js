@@ -3,6 +3,7 @@ import './SearchBox.scss'
 
 
 const SearchBox = ({currentCity, setCurrentCity, doFetch, isErrorCurrentDay}) => {
+
     return (
         <section className='search-box'>
             <form onSubmit={event => {

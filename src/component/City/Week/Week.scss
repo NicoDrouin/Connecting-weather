@@ -1,4 +1,4 @@
-/*  WEEK
+/*  WEEK & DAY
    ============================== */
 
 @import '../../../assets/styles/colors';
@@ -16,6 +16,41 @@
 
     .day {
         width: 20%;
+    }
+
+    .name {
+        color: black;
+        background-color: white;
+        padding: 12px;
+        font-size: 32px;
+        font-family: lobster2;
+    }
+
+    [class^=icon-] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        font-size: 72px;
+        margin-top: 5px;
+    }
+
+    .description::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.chart-temps text {
+    transform: translateX(-3%);
+    fill: white;
+    font-size: 26px;
+}
+
+/*  WEEK ONLY */
+
+.week-forecast {
+
+    .day {
         cursor: pointer;
 
         &:nth-of-type(1) .click-zone {
@@ -45,35 +80,5 @@
         top: 0;
         width: 20%;
         height: 100%;
-    }
-
-    .name {
-        color: black;
-        background-color: white;
-        padding: 12px;
-        font-size: 32px;
-        font-family: lobster2;
-    }
-
-    [class^=icon-] {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 80px;
-        font-size: 72px;
-        margin-top: 5px;
-    }
-
-    .description::first-letter {
-        text-transform: uppercase;
-    }
-}
-
-.chart-temps {
-
-    text {
-        transform: translateX(-3%);
-        fill: white;
-        font-size: 26px;
     }
 }

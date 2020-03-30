@@ -22,7 +22,6 @@ const City = ({
         <main className='city'>
             <div className='container'>
                 <div className='top'>
-                    {/* City is selected */}
                     <CurrentDay
                         apiDataCurrentDay = {apiDataCurrentDay}
                         isLoadingCurrentDay = {isLoadingCurrentDay}
