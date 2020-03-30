@@ -10,16 +10,13 @@
 
         .top {
             display: flex;
+            flex-direction: column-reverse;
             width: 100%;
-
-            > section {
-                width: 50%;
-            }
-
-            > .widget-current {
-                text-align: right;
-            }
         }
+    }
+
+    .widget-current {
+        text-align: right;
     }
 
     .search-box {
@@ -57,4 +54,24 @@
 
 .city .only-city {
     display: inline;
+}
+
+
+/*  RESP
+  ============================== */
+
+@media screen and (max-width: 767px) {
+    .widget-current {
+        margin-top: 32px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .city > .container .top {
+        flex-direction: row;
+
+        > section {
+            width: 50%;
+        }
+    }
 }

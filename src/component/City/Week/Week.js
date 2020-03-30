@@ -59,7 +59,7 @@ const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
                 </section>
             }
 
-            <div ref={anchorScroll}>I wanna be seen</div>
+            <div ref={anchorScroll}></div>
 
             {
                 dayToPrint &&

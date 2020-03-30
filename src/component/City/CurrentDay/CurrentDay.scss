@@ -17,6 +17,7 @@
 
     .bottom {
         display: flex;
+        align-items: center;
     }
 
     .temp {
@@ -31,21 +32,19 @@
             text-transform: capitalize;
         }
     }
-
-    [class^=icon-current-] {
-        font-size: 120px;
-        margin-left: 24px;
-    }
 }
 
 [class^=icon-current-] {
     width: 112px;
-    height: 112px;
-    background-size: 112px;
-    background-position: center;
-    background-repeat: no-repeat;
+    margin-left: 24px;
     border-radius: 50%;
     box-shadow: 0 0 22px 4px white;
+
+    &:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
 }
 
 .icon-current-cloud {
@@ -74,4 +73,14 @@
 
 .icon-current-thunder {
     background-image: url(../../../assets/img/weather/current-thunder.svg);
+}
+
+
+/* RESP
+   ============================== */
+
+@media screen and (min-width: 480px) {
+	.widget-current .bottom {
+        align-items: end;
+    }
 }
