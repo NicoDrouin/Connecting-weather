@@ -195,3 +195,39 @@ button:-moz-focusring,
 [class^=only-] {
     display: none;
 }
+
+
+
+
+/* RESP
+   ================================
+	Breakpoints:
+	* 480
+	* 768
+   ============================== */
+
+/* Min */
+@media screen and (min-width: 480px) {
+	.max-479 {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.max-767 {
+		display: none !important;
+	}
+}
+
+/* Max */
+@media screen and (max-width: 479px) {
+	.min-480 {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.min-768 {
+		display: none !important;
+	}
+}

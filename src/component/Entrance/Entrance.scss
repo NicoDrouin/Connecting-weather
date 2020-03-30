@@ -56,7 +56,7 @@
     }
 
     .error-messages {
-        bottom: calc(11% - 28px);
+        bottom: calc(11% - 16px);
         margin: 0;
     }
 
@@ -105,4 +105,14 @@
 
 .entrance .only-entrance {
     display: inline;
+}
+
+
+/*  RESP
+  ============================== */
+
+@media screen and (min-width: 480px) {
+    .search-box .error-messages {
+        bottom: calc(11% - 28px);
+    }
 }
