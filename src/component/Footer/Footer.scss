@@ -24,10 +24,16 @@
         > ul {
             margin: 0;
             padding: 0;
+            text-align: center;
             list-style: none;
 
             li {
-                display: inline-block;
+                display: inline;
+
+                &:not(:last-of-type):after {
+                    content: "\A";
+                    white-space: pre;
+                }
 
                 > a {
                     color: $primaryColor;
@@ -39,12 +45,31 @@
                         color: $primaryColorActive;
                     }
                 }
-
-                &:not(:last-of-type):after {
-                    content: '-';
-                    margin: 0 12px;
-                }
             }
         }
+    }
+}
+
+
+/*  RESP
+  ============================== */
+
+@media screen and (max-width: 479px) {
+    .footer > .container > p {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .footer > .container > ul li:not(:last-of-type):nth-child(2n+1):after {
+        content: '-';
+        margin: 0 12px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer > .container > ul li:not(:last-of-type):after {
+        content: '-';
+        margin: 0 12px;
     }
 }
