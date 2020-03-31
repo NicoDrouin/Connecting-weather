@@ -30,13 +30,13 @@ const Week = ({apiDataForecastWeek, isLoadingForecastWeek, isErrorForecastWeek})
             {
                 isLoadingForecastWeek ? 'loadingWeek' :
                 isErrorForecastWeek ? 'Houston, we\'ve had a problem.' :
-                <section className='chart-box week-forecast'>
+                <section className='chart-box forecast-week'>
                     <div className='top'>
                         {apiDataForecastWeek.list.map((dayOfWeek, i) =>
                             // i > 4 : make sure that the selected day is not today
                            !!( i > 4 & new Date(dayOfWeek.dt * 1000).getUTCHours() === 12) &&
-                            <div className='day' key={'dayOfWeek' + i}>
-                                <div className='name'>
+                            <div className='forecast-element' key={'dayOfWeek' + i}>
+                                <div className='day'>
                                     {new Date(dayOfWeek.dt * 1000).toLocaleString('fr-FR', {weekday: 'long'})}
                                 </div>
                                 <div className='temp max-767'>

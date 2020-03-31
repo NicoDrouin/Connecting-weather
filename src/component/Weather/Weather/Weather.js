@@ -19,7 +19,7 @@ const Weather = ({
     }) => {
 
     return (
-        <main className='city'>
+        <main className='weather'>
             <div className='container'>
                 <div className='top'>
                     <CurrentWeather

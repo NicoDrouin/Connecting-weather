@@ -27,7 +27,7 @@
     }
 }
 
-.week-forecast .day {
+.forecast-week .forecast-element {
     cursor: pointer;
 
     .click-zone {
@@ -38,7 +38,7 @@
 
 .chart-temps text {
     transform: translateX(-3%);
-    fill: white;
+    fill: $primaryColor;
     font-size: 26px;
 }
 
@@ -57,7 +57,7 @@
             flex-direction: column;
         }
 
-        .day {
+        .forecast-element {
             display: grid;
             position: relative;
             width: 100%;
@@ -69,7 +69,7 @@
             }
         }
 
-        .name,
+        .day,
         .temp,
         .description,
         .hour {
@@ -77,7 +77,7 @@
             text-align: right;
         }
 
-        .name {
+        .day {
             font-size: 42px;
         }
 
@@ -97,17 +97,17 @@
         }
     }
 
-    .week-forecast {
+    .forecast-week {
 
-        .day {
+        .forecast-element {
             grid-template-areas:
-                'name icon'
+                'day icon'
                 'temp icon'
                 'description icon';
         }
 
-        .name {
-            grid-area: name;
+        .day {
+            grid-area: day;
         }
 
         .click-zone {
@@ -118,21 +118,21 @@
         }
     }
 
-    .day-forecast {
+    .forecast-day {
 
-        .chart-box .name {
+        .chart-box .day {
             text-align: center;
             width: 100%;
         }
 
-        .day {
+        .forecast-element {
             grid-template-areas:
                 'hour icon'
                 'temp icon'
                 'description icon';
         }
 
-        .name {
+        .day {
             width: 100%;
             margin-bottom: 8px;
             font-size: 52px;
@@ -150,11 +150,11 @@
         border: 2px solid $tertiaryColor;
         border-radius: 8px;
 
-        .day {
+        .forecast-element {
             width: 20%;
         }
 
-        .name {
+        .day {
             color: black;
             background-color: white;
             padding: 12px;
@@ -169,9 +169,9 @@
         }
     }
 
-    .week-forecast {
+    .forecast-week {
 
-        .day {
+        .forecast-element {
 
             &:nth-of-type(1) .click-zone {
                 left: 0;
