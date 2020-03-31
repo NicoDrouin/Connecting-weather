@@ -1,8 +1,8 @@
 import React from 'react'
-import './SearchBox.scss'
+import './searchBox.scss'
 
 
-const SearchBox = ({currentCity, setCurrentCity, doFetch, isErrorCurrentDay}) => {
+const SearchBox = ({currentCity, setCurrentCity, doFetch, isErrorCurrentWeather}) => {
 
     return (
         <section className='search-box'>
@@ -23,7 +23,7 @@ const SearchBox = ({currentCity, setCurrentCity, doFetch, isErrorCurrentDay}) =>
                 />
                 <button type='submit'>Search</button>
             </form>
-            {isErrorCurrentDay &&
+            {isErrorCurrentWeather &&
                 <p className='error-messages'>
                     Erreur! Vérifiez votre aurtograffe !!!
                 </p>

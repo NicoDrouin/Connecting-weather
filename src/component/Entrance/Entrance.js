@@ -1,6 +1,5 @@
 import React from 'react'
-import './Entrance.scss'
-import '../SearchBox/SearchBox.scss'
+import './entrance.scss'
 
 import SearchBox from '../SearchBox/SearchBox'
 
@@ -8,8 +7,8 @@ import SearchBox from '../SearchBox/SearchBox'
 const Entrance = ({
         currentCity,
         setCurrentCity,
-        isLoadingCurrentDay,
-        isErrorCurrentDay,
+        isLoadingCurrentWeather,
+        isErrorCurrentWeather,
         doFetch
     }) => {
 
@@ -20,10 +19,10 @@ const Entrance = ({
                     currentCity = {currentCity}
                     setCurrentCity = {setCurrentCity}
                     doFetch = {doFetch}
-                    isErrorCurrentDay = {isErrorCurrentDay}
+                    isErrorCurrentWeather = {isErrorCurrentWeather}
                 />
             </div>
-            {/* {isLoadingCurrentDay ? 'isLoadingCurrentDay' : 'isNotLoadingCurrentDay'}<br/> */}
+            {/* {isLoadingCurrentWeather ? 'isLoadingCurrentWeather' : 'isNotLoadingCurrentWeather'}<br/> */}
         </main>
     )
 }

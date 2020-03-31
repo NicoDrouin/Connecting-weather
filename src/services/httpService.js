@@ -10,56 +10,56 @@ const useWeatherAPI = () => {
     const [cityAPI, setCityAPI] = useState('')
     const [cityIsSelected, setCityIsSelected] = useState(false)
 
-    const [apiDataCurrentDay, setApiDataCurrentDay] = useState(null)
-    const [isLoadingCurrentDay, setIsLoadingCurrentDay] = useState(false)
-    const [isErrorCurrentDay, setIsErrorCurrentDay] = useState(false)
+    const [apiDataCurrentWeather, setApiDataCurrentWeather] = useState(null)
+    const [isLoadingCurrentWeather, setIsLoadingCurrentWeather] = useState(false)
+    const [isErrorCurrentWeather, setIsErrorCurrentWeather] = useState(false)
 
-    const [apiDataWeek, setApiDataWeek] = useState(null)
-    const [isLoadingWeek, setIsLoadingWeek] = useState(false)
-    const [isErrorWeek, setIsErrorWeek] = useState(false)
+    const [apiDataForecastWeek, setApiDataForecastWeek] = useState(null)
+    const [isLoadingForecastWeek, setIsLoadingForecastWeek] = useState(false)
+    const [isErrorForecastWeek, setIsErrorForecastWeek] = useState(false)
 
     React.useEffect(() => {
 
-        const fetchDataCurrentDay = async () => {
-            setIsErrorCurrentDay(false)
-            setIsLoadingCurrentDay(true)
+        const fetchDataCurrentWeather = async () => {
+            setIsErrorCurrentWeather(false)
+            setIsLoadingCurrentWeather(true)
             try {
                 const result = await axios(
                     'https://' + baseURLAPI + 'weather?q=' + cityAPI + '&APPID=' + keyAPI + '&units=' + unitsAPI + '&lang=' + langAPI
                 )
-                setApiDataCurrentDay(result.data)
+                setApiDataCurrentWeather(result.data)
                 fetchDataWeek()
             } catch (error) {
-                setIsErrorCurrentDay(true)
+                setIsErrorCurrentWeather(true)
             }
-            setIsLoadingCurrentDay(false)
+            setIsLoadingCurrentWeather(false)
         }
 
         const fetchDataWeek = async () => {
-            setIsErrorWeek(false)
-            setIsLoadingWeek(true)
+            setIsErrorForecastWeek(false)
+            setIsLoadingForecastWeek(true)
             try {
                 const result = await axios(
                     'https://' + baseURLAPI + 'forecast?q=' + cityAPI + '&APPID=' + keyAPI + '&units=' + unitsAPI + '&lang=' + langAPI
                 )
-                setApiDataWeek(result.data)
+                setApiDataForecastWeek(result.data)
                 setCityIsSelected(true)
             } catch (error) {
-                setIsErrorWeek(true)
+                setIsErrorForecastWeek(true)
             }
-            setIsLoadingWeek(false)
+            setIsLoadingForecastWeek(false)
         }
 
-        cityAPI !== '' && fetchDataCurrentDay()
+        cityAPI !== '' && fetchDataCurrentWeather()
     }, [cityAPI])
 
     return [{
-        apiDataCurrentDay,
-        isLoadingCurrentDay,
-        isErrorCurrentDay,
-        apiDataWeek,
-        isLoadingWeek,
-        isErrorWeek,
+        apiDataCurrentWeather,
+        isLoadingCurrentWeather,
+        isErrorCurrentWeather,
+        apiDataForecastWeek,
+        isLoadingForecastWeek,
+        isErrorForecastWeek,
         cityIsSelected
         }, setCityAPI
     ]

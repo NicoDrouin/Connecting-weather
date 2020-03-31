@@ -1,10 +1,10 @@
 import React, { useState, useRef, Fragment } from 'react'
-import './Week.scss'
+import './forecastWeek.scss'
 
 import setIconWeather from '../../../functions/setIconWeather'
 import {createTempChart, temperaturesChart} from '../../../functions/createTempChart'
 
-import Day from '../Day/Day'
+import ForecastDay from '../ForecastDay/ForecastDay'
 
 
 const useScroll = () => {
@@ -14,7 +14,7 @@ const useScroll = () => {
     return [executeScroll, htmlElRef]
 }
 
-const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
+const Week = ({apiDataForecastWeek, isLoadingForecastWeek, isErrorForecastWeek}) => {
 
     const [dayToPrint, setDayToPrint] = useState()
 
@@ -28,11 +28,11 @@ const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
      return (
         <Fragment>
             {
-                isLoadingWeek ? 'loadingWeek' :
-                isErrorWeek ? 'Houston, we\'ve had a problem.' :
+                isLoadingForecastWeek ? 'loadingWeek' :
+                isErrorForecastWeek ? 'Houston, we\'ve had a problem.' :
                 <section className='chart-box week-forecast'>
                     <div className='top'>
-                        {apiDataWeek.list.map((dayOfWeek, i) =>
+                        {apiDataForecastWeek.list.map((dayOfWeek, i) =>
                             // i > 4 : make sure that the selected day is not today
                            !!( i > 4 & new Date(dayOfWeek.dt * 1000).getUTCHours() === 12) &&
                             <div className='day' key={'dayOfWeek' + i}>
@@ -65,8 +65,8 @@ const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
 
             {
                 dayToPrint &&
-                <Day
-                    apiDataWeek = {apiDataWeek}
+                <ForecastDay
+                    apiDataForecastWeek = {apiDataForecastWeek}
                     dayToPrint = {dayToPrint}
                 />
             }

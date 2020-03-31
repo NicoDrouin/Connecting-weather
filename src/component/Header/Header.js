@@ -1,5 +1,5 @@
 import React from 'react'
-import './Header.scss'
+import './header.scss'
 
 import logo from '../../assets/img/logo.svg'
 

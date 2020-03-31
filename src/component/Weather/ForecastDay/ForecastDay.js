@@ -4,7 +4,7 @@ import setIconWeather from '../../../functions/setIconWeather'
 import {createTempChart, temperaturesChart} from '../../../functions/createTempChart'
 
 
-const Day = ({apiDataWeek, dayToPrint}) => {
+const ForecastDay = ({apiDataForecastWeek, dayToPrint}) => {
 
     const forecastHours = ['6h00', '9h00', '12h00', '15h00', '18h00']
     let forecastHoursIncrement = -1
@@ -20,10 +20,10 @@ const Day = ({apiDataWeek, dayToPrint}) => {
             {
                 <section className='chart-box day-forecast'>
                     <div className='name'>
-                        {new Date(apiDataWeek.list[dayToPrint].dt * 1000).toLocaleString('fr-FR', {weekday: 'long'})}
+                        {new Date(apiDataForecastWeek.list[dayToPrint].dt * 1000).toLocaleString('fr-FR', {weekday: 'long'})}
                     </div>
                     <div className='top'>
-                        {apiDataWeek.list.map((hourOfDay, i) =>
+                        {apiDataForecastWeek.list.map((hourOfDay, i) =>
                             // i >= dayToPrint - 2 & i <= dayToPrint + 2 :
                             // These are the times around 12hUTC - 6h, 9h, 12h, 15h, 18h
                             !!(i >= dayToPrint - 2 & i <= dayToPrint + 2) &&
@@ -51,4 +51,4 @@ const Day = ({apiDataWeek, dayToPrint}) => {
     )
 }
 
-export default Day
+export default ForecastDay
