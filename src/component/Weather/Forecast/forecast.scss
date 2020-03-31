@@ -91,8 +91,8 @@
 
 @media screen and (min-width: 768px) {
     .chart-box {
-        border: 2px solid $tertiaryColor;
-        border-radius: 8px;
+        border: 1px solid $primaryColor;
+        border-radius: 8px 8px 0 0;
 
         .forecast-element {
             width: 20%;
