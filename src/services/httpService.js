@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 
 import axios from 'axios'
 
-import {baseURLAPI, keyAPI, unitsAPI, langAPI} from './URLAPI'
+import {baseURLAPI, unitsAPI, langAPI} from './URLAPI'
 
 
 const useWeatherAPI = () => {
     const [cityAPI, setCityAPI] = useState('')
     const [cityIsSelected, setCityIsSelected] = useState(false)
+
+    const keyAPI = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY
 
     const [apiDataCurrentWeather, setApiDataCurrentWeather] = useState(null)
     const [isLoadingCurrentWeather, setIsLoadingCurrentWeather] = useState(false)
@@ -51,7 +53,7 @@ const useWeatherAPI = () => {
         }
 
         cityAPI !== '' && fetchDataCurrentWeather()
-    }, [cityAPI])
+    }, [cityAPI, keyAPI])
 
     return [{
         apiDataCurrentWeather,
