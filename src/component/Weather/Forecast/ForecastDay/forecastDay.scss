@@ -1,0 +1,37 @@
+/*  FORECAST DAY
+   ============================== */
+
+@import '../../../../assets/styles/colors';
+
+
+   /* RESP
+       ============================== */
+
+@media screen and (max-width: 767px) {
+
+    .forecast-day {
+
+        .chart-box .day {
+            text-align: center;
+            width: 100%;
+        }
+
+        .forecast-element {
+            grid-template-areas:
+                'hour icon'
+                'temp icon'
+                'description icon';
+        }
+
+        .day {
+            width: 100%;
+            margin-bottom: 8px;
+            font-size: 52px;
+            text-align: center;
+        }
+
+        .hour {
+            font-size: 32px;
+        }
+    }
+}

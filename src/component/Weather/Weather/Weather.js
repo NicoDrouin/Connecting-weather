@@ -3,7 +3,7 @@ import './weather.scss'
 
 import SearchBox from '../../SearchBox/SearchBox'
 import CurrentWeather from '../CurrentWeather/CurrentWeather'
-import ForecastWeek from '../ForecastWeek/ForecastWeek'
+import ForecastWeek from '../Forecast/ForecastWeek/ForecastWeek'
 
 
 const Weather = ({

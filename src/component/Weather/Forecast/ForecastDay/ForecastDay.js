@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
+import './forecastDay.scss'
 
-import setIconWeather from '../../../functions/setIconWeather'
-import {createTempChart, temperaturesChart} from '../../../functions/createTempChart'
+import setIconWeather from '../../../../functions/setIconWeather'
+import {createTempChart, temperaturesChart} from '../../../../functions/createTempChart'
 
 
 const ForecastDay = ({apiDataForecastWeek, dayToPrint}) => {
