@@ -45,7 +45,7 @@
     }
 
     .error-messages {
-        top: calc(50% + 52px);
+        top: calc(50% + 32px);
         padding: 4px 8px;
         background-color: #ffffff80;
         border-radius: 10px;
@@ -63,6 +63,12 @@
 @media screen and (max-width: 767px) {
     .widget-current {
         margin-top: 32px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .weather .error-messages {
+        top: calc(50% + 45px);
     }
 }
 

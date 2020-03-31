@@ -11,8 +11,11 @@
 
     .name {
         font-size: 64px;
+        margin: 0;
         padding-bottom: 12px;
         line-height: 1;
+        font-weight: 400;
+        word-break: break-all;
     }
 
     .bottom {
@@ -26,7 +29,7 @@
     }
 
     .weather-description {
-        font-size: 38px;
+        font-size: 30px;
 
         &:first-letter {
             text-transform: capitalize;
@@ -80,7 +83,14 @@
    ============================== */
 
 @media screen and (min-width: 480px) {
-	.widget-current .bottom {
-        align-items: end;
+	.widget-current {
+
+        .bottom {
+            align-items: end;
+        }
+
+        .weather-description {
+            font-size: 38px;
+        }
     }
 }

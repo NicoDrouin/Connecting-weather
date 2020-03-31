@@ -12,7 +12,7 @@ const SearchBox = ({currentCity, setCurrentCity, doFetch, isErrorCurrentWeather}
             }}>
                 <label htmlFor='city'>
                     <span className='only-entrance'>Votre</span>
-                    <span className='only-city'>Nouvelle</span> ville:
+                    <span className='only-weather'>Nouvelle</span> ville:
                 </label>
                 <input
                     type = 'text'

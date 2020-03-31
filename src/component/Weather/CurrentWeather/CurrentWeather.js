@@ -13,9 +13,9 @@ const CurrentWeather = ({apiDataCurrentWeather, isLoadingCurrentWeather, isError
                 'loadingCurrentWeather' :
                 apiDataCurrentWeather &&
                 <Fragment>
-                    <div className='name'>
+                    <h2 className='name'>
                         {apiDataCurrentWeather.name}
-                    </div>
+                    </h2>
                     <div className='bottom'>
                         <div className='left'>
                             <div className='temp'>{apiDataCurrentWeather.main.temp + '°C'}</div>
