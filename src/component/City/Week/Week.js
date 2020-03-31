@@ -30,8 +30,7 @@ const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
             {
                 isLoadingWeek ? 'loadingWeek' :
                 isErrorWeek ? 'Houston, we\'ve had a problem.' :
-                <section
-                    className='chart-box week-forecast'>
+                <section className='chart-box week-forecast'>
                     <div className='top'>
                         {apiDataWeek.list.map((dayOfWeek, i) =>
                             // i > 4 : make sure that the selected day is not today
@@ -40,15 +39,18 @@ const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
                                 <div className='name'>
                                     {new Date(dayOfWeek.dt * 1000).toLocaleString('fr-FR', {weekday: 'long'})}
                                 </div>
+                                <div className='temp max-767'>
+                                    {dayOfWeek.main.temp + '°C'}
+                                </div>
                                 <div className={'icon-' + setIconWeather(parseInt(dayOfWeek.weather[0].id))}></div>
-                                <div className='description'>
+                                <div className='description min-768'>
                                     {dayOfWeek.weather[0].description}
                                 </div>
                                 <div
                                     className='click-zone'
                                     value = {i}
-                                    onClick={e => getDayForecast(i)}
-                                ></div>
+                                    onClick={e => getDayForecast(i)}>
+                                </div>
                                 <span className='d-none'>
                                     {temperaturesChart.push(dayOfWeek.main.temp)}
                                 </span>

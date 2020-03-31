@@ -8,7 +8,7 @@
     > .container {
         margin-top: 0;
 
-        .top {
+        > .top {
             display: flex;
             flex-direction: column-reverse;
             width: 100%;
@@ -67,7 +67,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .city > .container .top {
+    .city > .container > .top {
         flex-direction: row;
 
         > section {
