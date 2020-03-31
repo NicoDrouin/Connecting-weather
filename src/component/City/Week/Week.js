@@ -43,7 +43,7 @@ const Week = ({apiDataWeek, isLoadingWeek, isErrorWeek}) => {
                                     {dayOfWeek.main.temp + '°C'}
                                 </div>
                                 <div className={'icon-' + setIconWeather(parseInt(dayOfWeek.weather[0].id))}></div>
-                                <div className='description min-768'>
+                                <div className='description'>
                                     {dayOfWeek.weather[0].description}
                                 </div>
                                 <div
