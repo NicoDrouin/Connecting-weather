@@ -5,13 +5,13 @@ const Footer = () => {
     return (
         <footer className='footer'>
             <div className='container'>
-                <p>Danish wafer sweet roll donut powder cotton candy. Halvah liquorice I love cotton candy carrot cake sesame snaps I love. Halvah jujubes cake chupa chups danish.</p>
+                <p>Cupcake ipsum dolor sit amet jelly beans. Caramels soufflé pudding topping lollipop dessert chocolate bar tart powder. Candy pudding brownie croissant marzipan jelly-o topping bonbon wafer. Danish wafer marzipan ice cream candy.</p>
                 <hr/>
                 <ul>
-                    <li><a href='https://www.google.com'>I love fruitcake icing</a></li>
-                    <li><a href='https://www.google.com'>Tart I love caramels</a></li>
-                    <li><a href='https://www.google.com'>I love sugar plum halvah</a></li>
-                    <li><a href='https://www.google.com'>Sugar plum lollipop</a></li>
+                    <li><a href='/New York'>New-York</a></li>
+                    <li><a href='/Tokyo'>Tokyo</a></li>
+                    <li><a href='/Montcuq'>Montcuq</a></li>
+                    <li><a href='/Paris'>Paris</a></li>
                 </ul>
             </div>
         </footer>
