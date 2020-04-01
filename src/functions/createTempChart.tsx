@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 
-let minTemp, maxTemp, minMaxTempDifference, midChartTemp
+let minTemp: number, maxTemp: number, minMaxTempDifference: number, midChartTemp: number
 let xPosition, yPosition, xPositionPrev, yPositionPrev
 
-export let temperaturesChart = []
+export let temperaturesChart: number[] = []
 
-export const setChartTemps = (temperaturesChart) => {
+export const setChartTemps = (temperaturesChart: number[]) => {
     minTemp = Math.min(...temperaturesChart)
     maxTemp = Math.max(...temperaturesChart)
     minMaxTempDifference = maxTemp - minTemp
@@ -24,7 +24,7 @@ export const createTempChart = () => {
                         {yPosition = 460 - ((temperaturesChart[i] - minTemp) / minMaxTempDifference) * 420}
                         {xPositionPrev = -100 + i * 200}
                         {yPositionPrev = 460 - ((temperaturesChart[i - 1] - minTemp) / minMaxTempDifference) * 420}
-                        {i > 0 & i < 5 &&
+                        {i > 0 && i < 5 &&
                             <line
                                 x1={xPosition}
                                 y1={yPosition}

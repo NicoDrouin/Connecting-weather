@@ -6,6 +6,19 @@ import CurrentWeather from '../CurrentWeather/CurrentWeather'
 import ForecastWeek from '../Forecast/ForecastWeek/ForecastWeek'
 
 
+interface Props {
+    currentCity: string;
+    setCurrentCity: Function;
+    apiDataCurrentWeather: any;
+    isLoadingCurrentWeather: boolean;
+    isErrorCurrentWeather: boolean;
+    apiDataForecastWeek: any;
+    isLoadingForecastWeek: boolean;
+    isErrorForecastWeek: boolean;
+    doFetch: Function;
+}
+
+
 const Weather = ({
         currentCity,
         setCurrentCity,
@@ -16,7 +29,7 @@ const Weather = ({
         isLoadingForecastWeek,
         isErrorForecastWeek,
         doFetch
-    }) => {
+    }: Props): JSX.Element => {
 
     return (
         

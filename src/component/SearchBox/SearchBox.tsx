@@ -2,7 +2,19 @@ import React from 'react'
 import './searchBox.scss'
 
 
-const SearchBox = ({currentCity, setCurrentCity, doFetch, isErrorCurrentWeather}) => {
+interface Props {
+    currentCity: string;
+    setCurrentCity: Function;
+    isErrorCurrentWeather: boolean;
+    doFetch: Function;
+}
+
+const SearchBox = ({
+        currentCity,
+        setCurrentCity,
+        doFetch,
+        isErrorCurrentWeather
+    }: Props): JSX.Element => {
 
     return (
         <section className='search-box'>

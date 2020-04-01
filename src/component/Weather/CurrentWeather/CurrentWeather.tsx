@@ -4,7 +4,19 @@ import './currentWeather.scss'
 import setIconWeather from '../../../functions/setIconWeather'
 
 
-const CurrentWeather = ({apiDataCurrentWeather, isLoadingCurrentWeather, isErrorCurrentWeather}) => {
+interface Props {
+    apiDataCurrentWeather: any;
+    isLoadingCurrentWeather: boolean;
+    isErrorCurrentWeather: boolean;
+}
+
+
+const CurrentWeather = ({
+        apiDataCurrentWeather,
+        isLoadingCurrentWeather,
+        isErrorCurrentWeather
+    }: Props): JSX.Element => {
+
     return (
         <section className='widget-current'>
             {/* {isErrorCurrentWeather ? 'errorCurrentWeather' : 'noErrorCurrentWeather'} */}

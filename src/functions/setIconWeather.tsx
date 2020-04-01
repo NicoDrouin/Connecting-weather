@@ -1,4 +1,4 @@
-const setIconWeather = (weatherId) => {
+const setIconWeather = (weatherId: number) => {
     if (weatherId >= 802) return 'cloud'
     else if (weatherId === 801) return 'few-clouds'
     else if (weatherId === 800) return ('sun')

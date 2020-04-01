@@ -5,7 +5,16 @@ import setIconWeather from '../../../../functions/setIconWeather'
 import {createTempChart, temperaturesChart} from '../../../../functions/createTempChart'
 
 
-const ForecastDay = ({apiDataForecastWeek, dayToPrint}) => {
+interface Props {
+    apiDataForecastWeek: any;
+    dayToPrint: any;
+}
+
+
+const ForecastDay = ({
+        apiDataForecastWeek,
+        dayToPrint
+    }: Props): JSX.Element => {
 
     const forecastHours = ['6h00', '9h00', '12h00', '15h00', '18h00']
     let forecastHoursIncrement = -1
@@ -24,10 +33,12 @@ const ForecastDay = ({apiDataForecastWeek, dayToPrint}) => {
                         {new Date(apiDataForecastWeek.list[dayToPrint].dt * 1000).toLocaleString('fr-FR', {weekday: 'long'})}
                     </div>
                     <div className='top'>
-                        {apiDataForecastWeek.list.map((hourOfDay, i) =>
-                            // i >= dayToPrint - 2 & i <= dayToPrint + 2 :
+                        {apiDataForecastWeek.list.map((hourOfDay: any, i: Number) =>
+                            // i >= dayToPrint - 2 &&
+                            // i <= dayToPrint + 2 &&
                             // These are the times around 12hUTC - 6h, 9h, 12h, 15h, 18h
-                            !!(i >= dayToPrint - 2 & i <= dayToPrint + 2) &&
+                            i >= dayToPrint - 2 &&
+                            i <= dayToPrint + 2 &&
                             <div className='forecast-element' key={'hourOfDay' + i}>
                                 <div className={'icon-' + setIconWeather(parseInt(hourOfDay.weather[0].id))}></div>
                                 <div className='hour'>

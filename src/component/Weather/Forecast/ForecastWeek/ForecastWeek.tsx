@@ -9,23 +9,38 @@ import {createTempChart, temperaturesChart} from '../../../../functions/createTe
 import ForecastDay from '../ForecastDay/ForecastDay'
 
 
+interface Props {
+    apiDataForecastWeek: any;
+    isLoadingForecastWeek: boolean;
+    isErrorForecastWeek: boolean;
+    doFetch: Function;
+}
+
+
 const useScroll = () => {
     const htmlElRef = useRef(null)
-    const executeScroll = () => window.scrollTo({top: htmlElRef.current.offsetTop, behavior: 'smooth'})
+    const executeScroll = () => 
+        window.scrollTo({top: (htmlElRef.current as unknown as HTMLElement).offsetTop, behavior: 'smooth'})
 
     return [executeScroll, htmlElRef]
 }
 
-const Week = ({apiDataForecastWeek, isLoadingForecastWeek, isErrorForecastWeek, doFetch}) => {
+const Week = ({
+        apiDataForecastWeek,
+        isLoadingForecastWeek,
+        isErrorForecastWeek,
+        doFetch
+    }: Props): JSX.Element => {
+
     let { city } = useParams()
 
     const [dayToPrint, setDayToPrint] = useState()
 
     const [scrollToElement, anchorScroll] = useScroll()
 
-    const getDayForecast = (i) => {
+    const getDayForecast = (i: any) => {
         setDayToPrint(i)
-        setTimeout(scrollToElement, 100)
+        setTimeout(scrollToElement as Function, 100)
     }
 
     useEffect(() => {
@@ -40,9 +55,10 @@ const Week = ({apiDataForecastWeek, isLoadingForecastWeek, isErrorForecastWeek, 
                 apiDataForecastWeek &&
                 <section className='chart-box forecast-week'>
                     <div className='top'>
-                        {apiDataForecastWeek.list.map((dayOfWeek, i) =>
+                        {apiDataForecastWeek.list.map((dayOfWeek: any, i: number) =>
                             // i > 4 : make sure that the selected day is not today
-                           !!( i > 4 & new Date(dayOfWeek.dt * 1000).getUTCHours() === 12) &&
+                            i > 4 &&
+                           new Date(dayOfWeek.dt * 1000).getUTCHours() === 12 &&
                             <div className='forecast-element' key={'dayOfWeek' + i}>
                                 <div className='day'>
                                     {new Date(dayOfWeek.dt * 1000).toLocaleString('fr-FR', {weekday: 'long'})}
@@ -56,7 +72,7 @@ const Week = ({apiDataForecastWeek, isLoadingForecastWeek, isErrorForecastWeek, 
                                 </div>
                                 <div
                                     className='click-zone'
-                                    value = {i}
+                                    data-day-index = {i}
                                     onClick={e => getDayForecast(i)}>
                                 </div>
                                 <span className='d-none'>
