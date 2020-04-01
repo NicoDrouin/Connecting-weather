@@ -51,7 +51,7 @@ const useWeatherAPI = () => {
                 setIsErrorForecastWeek(true)
             }
             setIsLoadingForecastWeek(false)
-            history.push({pathname: '/city/' + cityAPI})
+            history.push({pathname: '/' + cityAPI})
         }
 
         cityAPI !== '' && fetchDataCurrentWeather()

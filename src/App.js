@@ -27,7 +27,7 @@ const App = () => {
 
             <Switch>
 
-                <Route path='/city/:city'>
+                <Route path='/:city'>
                     <Weather
                         currentCity = {currentCity}
                         setCurrentCity = {setCurrentCity}
