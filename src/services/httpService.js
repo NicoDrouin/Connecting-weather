@@ -1,5 +1,6 @@
 // https://www.robinwieruch.de/react-hooks-fetch-data
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom";
 
 import axios from 'axios'
 
@@ -7,6 +8,7 @@ import {baseURLAPI, unitsAPI, langAPI} from './URLAPI'
 
 
 const useWeatherAPI = () => {
+    const history = useHistory();
     const [cityAPI, setCityAPI] = useState('')
     const [cityIsSelected, setCityIsSelected] = useState(false)
 
@@ -21,7 +23,6 @@ const useWeatherAPI = () => {
     const [isErrorForecastWeek, setIsErrorForecastWeek] = useState(false)
 
     React.useEffect(() => {
-
         const fetchDataCurrentWeather = async () => {
             setIsErrorCurrentWeather(false)
             setIsLoadingCurrentWeather(true)
@@ -50,10 +51,11 @@ const useWeatherAPI = () => {
                 setIsErrorForecastWeek(true)
             }
             setIsLoadingForecastWeek(false)
+            history.push({pathname: '/city/' + cityAPI})
         }
 
         cityAPI !== '' && fetchDataCurrentWeather()
-    }, [cityAPI, keyAPI])
+    }, [cityAPI, keyAPI, history])
 
     return [{
         apiDataCurrentWeather,

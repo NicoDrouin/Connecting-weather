@@ -19,6 +19,7 @@ const Weather = ({
     }) => {
 
     return (
+        
         <main className='weather'>
             <div className='container'>
                 <div className='top'>
@@ -38,6 +39,7 @@ const Weather = ({
                     apiDataForecastWeek = {apiDataForecastWeek}
                     isLoadingForecastWeek = {isLoadingForecastWeek}
                     isErrorForecastWeek = {isErrorForecastWeek}
+                    doFetch = {doFetch}
                 />
             </div>
         </main>

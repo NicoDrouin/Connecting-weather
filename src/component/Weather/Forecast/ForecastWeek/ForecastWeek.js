@@ -1,4 +1,5 @@
-import React, { useState, useRef, Fragment } from 'react'
+import React, { useState, useEffect, useRef, Fragment } from 'react'
+import { useParams } from "react-router";
 import './../forecast.scss'
 import './forecastWeek.scss'
 
@@ -15,7 +16,8 @@ const useScroll = () => {
     return [executeScroll, htmlElRef]
 }
 
-const Week = ({apiDataForecastWeek, isLoadingForecastWeek, isErrorForecastWeek}) => {
+const Week = ({apiDataForecastWeek, isLoadingForecastWeek, isErrorForecastWeek, doFetch}) => {
+    let { city } = useParams()
 
     const [dayToPrint, setDayToPrint] = useState()
 
@@ -26,11 +28,16 @@ const Week = ({apiDataForecastWeek, isLoadingForecastWeek, isErrorForecastWeek})
         setTimeout(scrollToElement, 100)
     }
 
+    useEffect(() => {
+        if (!apiDataForecastWeek) doFetch(city)
+    }, [apiDataForecastWeek, city, doFetch] )
+
      return (
         <Fragment>
             {
                 isLoadingForecastWeek ? 'loadingWeek' :
                 isErrorForecastWeek ? 'Houston, we\'ve had a problem.' :
+                apiDataForecastWeek &&
                 <section className='chart-box forecast-week'>
                     <div className='top'>
                         {apiDataForecastWeek.list.map((dayOfWeek, i) =>

@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react'
+import { Route, Switch } from 'react-router-dom'
 
 import useWeatherAPI from './services/httpService'
 
@@ -17,36 +18,41 @@ const App = () => {
         isErrorCurrentWeather,
         apiDataForecastWeek,
         isLoadingForecastWeek,
-        isErrorForecastWeek,
-        cityIsSelected
+        isErrorForecastWeek
     }, doFetch] = useWeatherAPI()
 
 	return (
         <Fragment>
             <Header/>
-            {
-            cityIsSelected
-            ?
-            <Weather
-                currentCity = {currentCity}
-                setCurrentCity = {setCurrentCity}
-                apiDataCurrentWeather = {apiDataCurrentWeather}
-                isLoadingCurrentWeather = {isLoadingCurrentWeather}
-                isErrorCurrentWeather = {isErrorCurrentWeather}
-                apiDataForecastWeek = {apiDataForecastWeek}
-                isLoadingForecastWeek = {isLoadingForecastWeek}
-                isErrorForecastWeek = {isErrorForecastWeek}
-                doFetch = {doFetch}
-            />
-            :
-            <Entrance
-                currentCity = {currentCity}
-                setCurrentCity = {setCurrentCity}
-                isLoadingCurrentWeather = {isLoadingCurrentWeather}
-                isErrorCurrentWeather = {isErrorCurrentWeather}
-                doFetch = {doFetch}
-            />
-            }
+
+            <Switch>
+
+                <Route path='/city/:city'>
+                    <Weather
+                        currentCity = {currentCity}
+                        setCurrentCity = {setCurrentCity}
+                        apiDataCurrentWeather = {apiDataCurrentWeather}
+                        isLoadingCurrentWeather = {isLoadingCurrentWeather}
+                        isErrorCurrentWeather = {isErrorCurrentWeather}
+                        apiDataForecastWeek = {apiDataForecastWeek}
+                        isLoadingForecastWeek = {isLoadingForecastWeek}
+                        isErrorForecastWeek = {isErrorForecastWeek}
+                        doFetch = {doFetch}
+                    />
+                </Route>
+
+                <Route path='/'>
+                    <Entrance
+                        currentCity = {currentCity}
+                        setCurrentCity = {setCurrentCity}
+                        isLoadingCurrentWeather = {isLoadingCurrentWeather}
+                        isErrorCurrentWeather = {isErrorCurrentWeather}
+                        doFetch = {doFetch}
+                    />
+                </Route>
+
+            </Switch>
+
             <Footer/>
         </Fragment>
 	)
