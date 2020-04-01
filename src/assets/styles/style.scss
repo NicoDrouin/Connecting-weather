@@ -201,6 +201,7 @@ button:-moz-focusring,
    ================================
 	Breakpoints:
 	* 480
+	* 640
 	* 768
    ============================== */
 
@@ -220,6 +221,12 @@ button:-moz-focusring,
 /* Max */
 @media screen and (max-width: 479px) {
 	.min-480 {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.min-640 {
 		display: none !important;
 	}
 }
