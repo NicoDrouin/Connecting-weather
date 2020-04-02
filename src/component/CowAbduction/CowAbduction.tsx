@@ -14,5 +14,5 @@ const CowAbduction = () => {
         </Fragment>
     )
 }
- 
+
 export default CowAbduction

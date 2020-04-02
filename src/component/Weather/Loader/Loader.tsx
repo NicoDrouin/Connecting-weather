@@ -8,5 +8,5 @@ const Loader = () => {
         <img className='loader' src={sun} alt='loader'/>
     )
 }
- 
+
 export default Loader
