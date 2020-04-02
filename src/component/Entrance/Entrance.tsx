@@ -1,11 +1,9 @@
 import React from 'react'
 import './entrance.scss'
-import './cow-abduction.scss'
-
-import spaceCow from '../../assets/img/spaceCow.svg'
-import ufo from '../../assets/img/ufo.svg'
 
 import SearchBox from '../SearchBox/SearchBox'
+
+import CowAbduction from '../CowAbduction/CowAbduction'
 
 
 interface Props {
@@ -32,9 +30,7 @@ const Entrance = ({
                     doFetch = {doFetch}
                     isErrorCurrentWeather = {isErrorCurrentWeather}
                 />
-                <img className='space-cow min-640' src={spaceCow} alt='Cow'/>
-                <div className='green-ray min-640'></div>
-                <img className='ufo min-640' src={ufo} alt='UFO'/>
+                <CowAbduction/>
             </div>
         </main>
     )
