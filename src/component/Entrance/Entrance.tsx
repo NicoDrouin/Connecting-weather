@@ -19,7 +19,6 @@ interface Props {
 const Entrance = ({
         currentCity,
         setCurrentCity,
-        isLoadingCurrentWeather,
         isErrorCurrentWeather,
         doFetch
     }: Props): JSX.Element => {
@@ -37,7 +36,6 @@ const Entrance = ({
                 <div className='green-ray min-640'></div>
                 <img className='ufo min-640' src={ufo} alt='UFO'/>
             </div>
-            {/* {isLoadingCurrentWeather ? 'isLoadingCurrentWeather' : 'isNotLoadingCurrentWeather'}<br/> */}
         </main>
     )
 }

@@ -7,6 +7,7 @@ import setIconWeather from '../../../../functions/setIconWeather'
 import {createTempChart, temperaturesChart} from '../../../../functions/createTempChart'
 
 import ForecastDay from '../ForecastDay/ForecastDay'
+import Loader from '../../Loader/Loader'
 
 
 interface Props {
@@ -50,8 +51,10 @@ const Week = ({
      return (
         <Fragment>
             {
-                isLoadingForecastWeek ? 'loadingWeek' :
-                isErrorForecastWeek ? 'Houston, we\'ve had a problem.' :
+                isLoadingForecastWeek ?
+                <Loader/> :
+                isErrorForecastWeek ?
+                'Houston, we\'ve had a problem.' :
                 apiDataForecastWeek &&
                 <section className='chart-box forecast-week'>
                     <div className='top'>

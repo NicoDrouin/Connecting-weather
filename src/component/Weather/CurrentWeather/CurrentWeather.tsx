@@ -3,6 +3,8 @@ import './currentWeather.scss'
 
 import setIconWeather from '../../../functions/setIconWeather'
 
+import Loader from '../Loader/Loader'
+
 
 interface Props {
     apiDataCurrentWeather: any;
@@ -19,10 +21,11 @@ const CurrentWeather = ({
 
     return (
         <section className='widget-current'>
-            {/* {isErrorCurrentWeather ? 'errorCurrentWeather' : 'noErrorCurrentWeather'} */}
             {
                 isLoadingCurrentWeather ?
-                'loadingCurrentWeather' :
+                <Loader/> :
+                isErrorCurrentWeather ?
+                'Houston, we\'ve had a problem.' :
                 apiDataCurrentWeather &&
                 <Fragment>
                     <h2 className='name'>
