@@ -12,7 +12,8 @@ const useWeatherAPI = () => {
     const [cityAPI, setCityAPI] = useState('')
     const [cityIsSelected, setCityIsSelected] = useState(false)
 
-    const keyAPI = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY
+    // const keyAPI = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY
+    const keyAPI = '19bf54806da80afdc27f3660b45b2382'
 
     const [apiDataCurrentWeather, setApiDataCurrentWeather] = useState(null)
     const [isLoadingCurrentWeather, setIsLoadingCurrentWeather] = useState(false)
