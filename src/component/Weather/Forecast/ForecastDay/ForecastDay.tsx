@@ -36,7 +36,7 @@ const ForecastDay = ({
                         {apiDataForecastWeek.list.map((hourOfDay: any, i: Number) =>
                             // i >= dayToPrint - 2 &&
                             // i <= dayToPrint + 2 &&
-                            // These are the times around 12hUTC - 6h, 9h, 12h, 15h, 18h
+                            // These are the times around 12hUTC: 6h, 9h, 12h, 15h, 18h
                             i >= dayToPrint - 2 &&
                             i <= dayToPrint + 2 &&
                             <div className='forecast-element' key={'hourOfDay' + i}>
@@ -56,7 +56,9 @@ const ForecastDay = ({
                             </div>
                         )}
                     </div>
+                    <div className='chart-temps'>
                         {createTempChart()}
+                    </div>
                 </section>
             }
         </Fragment>

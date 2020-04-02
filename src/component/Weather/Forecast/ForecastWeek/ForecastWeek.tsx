@@ -37,6 +37,8 @@ const Week = ({
 
     const [dayToPrint, setDayToPrint] = useState()
 
+    let indexDays : Array<number> = []
+
     const [scrollToElement, anchorScroll] = useScroll()
 
     const getDayForecast = (i: any) => {
@@ -59,10 +61,12 @@ const Week = ({
                 <section className='chart-box forecast-week'>
                     <div className='top'>
                         {apiDataForecastWeek.list.map((dayOfWeek: any, i: number) =>
-                            // i > 4 : make sure that the selected day is not today
-                            i > 4 &&
-                           new Date(dayOfWeek.dt * 1000).getUTCHours() === 12 &&
-                            <div className='forecast-element' key={'dayOfWeek' + i}>
+                            new Date(dayOfWeek.dt * 1000).getUTCHours() === 12 &&
+                            <div
+                                className='forecast-element'
+                                key={'dayOfWeek' + i}
+                                data-day-index = {i}
+                                onClick={e => getDayForecast(i)}>
                                 <div className='day'>
                                     {new Date(dayOfWeek.dt * 1000).toLocaleString('fr-FR', {weekday: 'long'})}
                                 </div>
@@ -73,30 +77,36 @@ const Week = ({
                                 <div className='description'>
                                     {dayOfWeek.weather[0].description}
                                 </div>
-                                <div
-                                    className='click-zone'
-                                    data-day-index = {i}
-                                    onClick={e => getDayForecast(i)}>
-                                </div>
                                 <span className='d-none'>
                                     {temperaturesChart.push(dayOfWeek.main.temp)}
+                                    {indexDays.push(i)}
                                 </span>
                             </div>
                         )}
                     </div>
-                    {createTempChart()}
+            <       div className='chart-temps min-768'>
+                        {
+                            indexDays.map((indexDay: number, i: number) =>
+                                <div
+                                    key={'zone-click' + i}
+                                    className='click-zone'
+                                    style={{width: 100 / indexDays.length + '%', left: 100 / indexDays.length * i + '%'}}
+                                    data-day-index = {indexDay}
+                                    onClick={e => getDayForecast(indexDay)}
+                                ></div>
+                        )}
+                        {createTempChart()}
+                    </div>
                 </section>
             }
 
             <div ref={anchorScroll}></div>
 
-            {
-                dayToPrint &&
-                <ForecastDay
-                    apiDataForecastWeek = {apiDataForecastWeek}
-                    dayToPrint = {dayToPrint}
-                />
-            }
+            {dayToPrint &&
+            <ForecastDay
+                apiDataForecastWeek = {apiDataForecastWeek}
+                dayToPrint = {dayToPrint}
+            />}
         </Fragment>
     )
 }

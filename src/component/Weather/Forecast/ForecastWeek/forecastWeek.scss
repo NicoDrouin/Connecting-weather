@@ -3,8 +3,11 @@
 
 @import '../../../../assets/styles/colors';
 
-.forecast-week .forecast-element {
-    cursor: pointer;
+.forecast-week {
+
+    .forecast-element {
+        cursor: pointer;
+    }
 
     .click-zone {
         content: '';
@@ -44,33 +47,15 @@
 
     .forecast-week {
 
-        .forecast-element {
-
-            &:nth-of-type(1) .click-zone {
-                left: 0;
-            }
-
-            &:nth-of-type(2) .click-zone {
-                left: 20%;
-            }
-
-            &:nth-of-type(3) .click-zone {
-                left: 40%;
-            }
-
-            &:nth-of-type(4) .click-zone {
-                left: 60%;
-            }
-
-            &:nth-of-type(5) .click-zone {
-                left: 80%;
-            }
+        .chart-temps {
+            position: relative;
         }
 
         .click-zone {
+            position: absolute;
             top: 0;
-            width: 20%;
             height: 100%;
+            cursor: pointer;
         }
     }
 }
