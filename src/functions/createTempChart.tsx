@@ -16,6 +16,7 @@ export const setChartTemps = (temperaturesChart: number[]) => {
 export const getNumElements = () => {return temperaturesChart.length}
 
 export const createTempChart = () => {
+
     return (
         <svg xmlns='http://www.w3.org/2000/svg' viewBox={'0 0 ' + (1000 * (temperaturesChart.length / 5)) + ' 500'}>
             {setChartTemps(temperaturesChart)}

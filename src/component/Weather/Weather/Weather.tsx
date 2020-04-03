@@ -32,28 +32,32 @@ const Weather = ({
     }: Props): JSX.Element => {
 
     return (
-        
         <main className='weather'>
             <div className='container'>
                 <div className='top'>
+
                     <CurrentWeather
                         apiDataCurrentWeather = {apiDataCurrentWeather}
                         isLoadingCurrentWeather = {isLoadingCurrentWeather}
                         isErrorCurrentWeather = {isErrorCurrentWeather}
                     />
+
                     <SearchBox
                         currentCity = {currentCity}
                         setCurrentCity = {setCurrentCity}
                         doFetch = {doFetch}
                         isErrorCurrentWeather = {isErrorCurrentWeather}
                     />
+
                 </div>
+
                 <ForecastWeek
                     apiDataForecastWeek = {apiDataForecastWeek}
                     isLoadingForecastWeek = {isLoadingForecastWeek}
                     isErrorForecastWeek = {isErrorForecastWeek}
                     doFetch = {doFetch}
                 />
+
             </div>
         </main>
     )

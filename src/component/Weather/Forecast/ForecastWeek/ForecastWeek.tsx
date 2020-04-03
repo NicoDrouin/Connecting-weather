@@ -22,7 +22,6 @@ const useScroll = () => {
     const htmlElRef = useRef(null)
     const executeScroll = () => 
         window.scrollTo({top: (htmlElRef.current as unknown as HTMLElement).offsetTop, behavior: 'smooth'})
-
     return [executeScroll, htmlElRef]
 }
 
@@ -66,7 +65,8 @@ const Week = ({
                                 className='forecast-element'
                                 key={'dayOfWeek' + i}
                                 data-day-index = {i}
-                                onClick={e => getDayForecast(i)}>
+                                onClick={e => getDayForecast(i)}
+                            >
                                 <div className='day'>
                                     {new Date(dayOfWeek.dt * 1000).toLocaleString('fr-FR', {weekday: 'long'})}
                                 </div>
@@ -84,7 +84,7 @@ const Week = ({
                             </div>
                         )}
                     </div>
-            <       div className='chart-temps min-768'>
+                    <div className='chart-temps min-768'>
                         {
                             indexDays.map((indexDay: number, i: number) =>
                                 <div
