@@ -4,13 +4,12 @@ import { useHistory } from "react-router-dom";
 
 import axios from 'axios'
 
-import {baseURLAPI, unitsAPI, langAPI} from './URLAPI'
+import { baseURLAPI, unitsAPI, langAPI } from './URLAPI'
 
 
 const useWeatherAPI = () => {
     const history = useHistory();
     const [cityAPI, setCityAPI] = useState('')
-    const [cityIsSelected, setCityIsSelected] = useState(false)
 
     // const keyAPI = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY
     const keyAPI = '19bf54806da80afdc27f3660b45b2382'
@@ -47,7 +46,6 @@ const useWeatherAPI = () => {
                     'https://' + baseURLAPI + 'forecast?q=' + cityAPI + '&APPID=' + keyAPI + '&units=' + unitsAPI + '&lang=' + langAPI
                 )
                 setApiDataForecastWeek(result.data)
-                setCityIsSelected(true)
             } catch (error) {
                 setIsErrorForecastWeek(true)
             }
@@ -65,7 +63,6 @@ const useWeatherAPI = () => {
         apiDataForecastWeek,
         isLoadingForecastWeek,
         isErrorForecastWeek,
-        cityIsSelected
         }, setCityAPI
     ]
 }

@@ -4,7 +4,7 @@ import './../forecast.scss'
 import './forecastWeek.scss'
 
 import setIconWeather from '../../../../functions/setIconWeather'
-import {createTempChart, temperaturesChart} from '../../../../functions/createTempChart'
+import { createTempChart, temperaturesChart } from '../../../../functions/createTempChart'
 
 import ForecastDay from '../ForecastDay/ForecastDay'
 import Loader from '../../Loader/Loader'

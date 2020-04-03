@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import './forecastDay.scss'
 
 import setIconWeather from '../../../../functions/setIconWeather'
-import {createTempChart, temperaturesChart} from '../../../../functions/createTempChart'
+import { createTempChart, temperaturesChart } from '../../../../functions/createTempChart'
 
 
 interface Props {
