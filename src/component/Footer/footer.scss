@@ -29,6 +29,7 @@
 
             li {
                 display: inline;
+                line-height: 2.6;
 
                 &:not(:last-of-type):after {
                     content: "\A";
@@ -36,6 +37,7 @@
                 }
 
                 > a {
+                    padding: 10px;
                     color: $primaryColor;
                     transition: color .2s;
 
@@ -63,13 +65,13 @@
 @media screen and (min-width: 480px) {
     .footer > .container > ul li:not(:last-of-type):nth-child(2n+1):after {
         content: '-';
-        margin: 0 12px;
+        margin: 0 4px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .footer > .container > ul li:not(:last-of-type):after {
         content: '-';
-        margin: 0 12px;
+        margin: 0 4px;
     }
 }
