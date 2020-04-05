@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, Fragment } from 'react'
-import { useParams } from "react-router";
+import { useParams } from 'react-router'
 import './../forecast.scss'
 import './forecastWeek.scss'
 
